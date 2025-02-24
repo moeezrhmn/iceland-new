@@ -1,0 +1,548 @@
+@media all and (-ms-high-contrast:none) {}
+@media all and (min-width:1201px) {}
+@media all and (max-width:1199px) {
+	.account_cart_links li a {
+		padding: 0 0 0 5px;
+	}
+	.explore_iceland .grid_content > div .img_wrapper {
+		height: 250px;
+	}
+	.plan_drive .grid_content {
+		height: 400px;
+	}
+	.grid_content > div {
+		margin-bottom: 20px;
+	}
+	.custom_navbar .navbar-collapse > ul > li {
+		margin: 0 5px;
+	}
+	.custom_navbar .navbar-brand {
+		margin-right: 25px;
+	}
+	.custom_navbar .navbar-collapse > ul > li > a {
+		font-size: 14px;
+	}
+	footer .row > div ul.social_links li a {
+		height: 40px;
+		width: 40px;
+	}
+	.intro_header {
+		margin-top: 72px;
+	}
+}
+@media all and (max-width:991px) {
+	.submenu .subMenu_wrapper {
+		border-radius: 10px;
+		width: 100%;
+		position: relative;
+		top: 0;
+		max-height: 500px;
+		overflow: auto;
+	}
+	.search_wrapper.static_bg {
+		margin-top: 70px;
+	}
+	.subMenu_wrapper ul {
+		display: block;
+		border-right: none;
+		border-bottom: 1px solid #02529C77;
+		min-width: 100%;
+		margin-bottom: 10px;
+	}
+	.subMenu_wrapper ul:last-of-type {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+	.subMenu_wrapper h3 {
+		margin-bottom: 10px;
+	}
+	.navbar-collapse {
+		overflow: auto;
+		position: fixed;
+		left: 0;
+		z-index: 100;
+		padding: 15px;
+		background-color: rgba(0, 0, 0, .7);
+		height: 100%;
+		display: block;
+		-webkit-box-flex: 0;
+		-ms-flex: none;
+		flex: none;
+		top: 0;
+		width: 280px;
+		-webkit-transition: all .3s ease-in;
+		transition: all .3s ease-in;
+		-webkit-transform: translateX(-280px);
+		transform: translateX(-280px);
+	}
+	.slide_right {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	.collapse:not(.show) {
+		display: block;
+	}
+	.custom_navbar,
+	.scroll .custom_navbar {
+		padding: 10px 15px;
+	}
+	.account_cart_links {
+		margin: 0 !important;
+	}
+	.navbar-toggler {
+		position: absolute;
+		right: 15px;
+		font-size: 25px;
+		color: #fff;
+		top: 10px;
+		padding: 0;
+		display: block;
+		border: none;
+	}
+	.navbar-toggler:hover,
+	.navbar-toggler:focus,
+	.navbar-toggler:active {
+		outline: none;
+		text-decoration: none;
+	}
+	.navbar-toggler .navbar-toggler-icon {
+		width: auto;
+		height: auto;
+	}
+	.account_cart_links {
+		position: relative;
+		left: 77px !important;
+		margin: 0 35px 0 0 !important;
+        top: 14px;
+	}
+	.custom_navbar .navbar-brand {
+		margin-right: 0;
+	}
+	.main_slider {
+		height: 450px;
+	}
+	.plan_drive .grid_content .row > div > a i {
+		width: 150px;
+		height: 150px;
+		font-size: 60px;
+	}
+	.plan_drive .grid_content .row > div > a span {
+		font-size: 18px;
+	}
+	.plan_drive .grid_content {
+		height: 300px;
+	}
+	footer .row > div h4 {
+		font-size: 22px;
+	}
+	.upper_footer {
+		padding: 30px 0 10px;
+	}
+	.lower_footer {
+		margin-top: 20px;
+	}
+	.explore_iceland .grid_content > div .img_wrapper {
+		height: 200px;
+	}
+	.main_slider .carousel-caption {
+		bottom: 15%;
+		width: 100%;
+		left: 0;
+		right: 0;
+	}
+	.sidebar_content {
+		margin-top: 30px;
+	}
+	.tab_content .row > div {
+		border: none !important;
+	}
+	.upper_footer br {
+		display: none;
+	}
+	.search_results .row > div {
+		-webkit-box-flex: 0;
+		-ms-flex: none;
+		flex: none;
+		max-width: 100%;
+	}
+	.order_container {
+		padding-top: 60px;
+	}
+	.order_wrapper,
+	.checkout_wrapper {
+		padding-top: 30px;
+	}
+	.order_wrapper table th {
+		font-size: 14px;
+	}
+	.order_wrapper table td {
+		font-size: 12px;
+	}
+	.intro_header {
+		margin-top: 62px;
+	}
+	.intro_header h1 {
+		padding: 20px;
+	}
+	.checkout_wrapper > .row > div {
+		padding: 0 15px;
+	}
+	.checkout_wrapper .search_results .media-body {
+		padding: 10px;
+	}
+	.search_results .media-body h5 {
+		font-size: 18px;
+	}
+	.search_results .media-body .search_reviews h5 {
+		font-size: 16px;
+	}
+	.checkout_wrapper .search_results .media-body ul li,
+	.bloggers.search_results .media-body ul li {
+		border-right: none;
+		display: block;
+		padding: 3px 0;
+	}
+	.action_btns {
+		right: 30px;
+	}
+	.maps {
+		height: 300px;
+		max-width: 100%;
+		margin-bottom: 30px;
+		padding: 0;
+	}
+	.custom_results {
+		width: 100%;
+		padding: 0;
+	}
+	.search_results .card-body .media > a {
+		height: 300px;
+	}
+}
+@media screen and(max-width: 440px){
+	.search_results .media-body {
+		width: 100%;
+		height: 180px;
+	}
+}
+@media all and (max-width:767px) {
+	.main_content {
+		margin: 0 15px;
+	}
+	.form-control {
+		font-size: 14px;
+	}
+	.custom_navbar .navbar-brand img {
+		max-width: 120px;
+	}
+	.navbar-toggler {
+		font-size: 24px;
+	}
+	.submenu .subMenu_wrapper {
+		position: relative;
+		top: 0;
+		width: 100%;
+	}
+	.submenu.level2 .subMenu_wrapper {
+		top: 0;
+		left: 0;
+		position: relative;
+		width: 100%;
+		border: none;
+		margin: 0 auto;
+	}
+	.grid_section {
+		padding: 20px 0 0;
+	}
+	.grid_section > h2 {
+		font-size: 24px;
+	}
+	.main_slider {
+		height: 450px;
+	}
+	.main_slider .carousel-caption h2 {
+		font-size: 36px;
+	}
+	.grid_section > p {
+		font-size: 16px;
+	}
+	.view_all {
+		margin: 0px auto 20px;
+	}
+	.contact_local .view_all,
+	.travell_bloggers .view_all {
+		margin: 10px auto;
+	}
+	.plan_drive .grid_content {
+		height: auto;
+	}
+	.plan_drive .grid_content .row > div > a i {
+		width: 100px;
+		height: 100px;
+		font-size: 40px;
+		margin: 15px auto;
+	}
+	.plan_drive .grid_content .row > div > a span {
+		font-size: 13px;
+	}
+	.bloggers .card-title {
+		font-size: 20px;
+	}
+	footer .row > div h4 {
+		font-size: 18px;
+	}
+	footer .row > div {
+		margin-bottom: 20px;
+	}
+	footer .row:last-of-type > div {
+		margin-bottom: 0;
+	}
+	footer .row > div > a {
+		margin: 0 auto 10px;
+	}
+	footer .row > div > p,
+	footer .row > div li a,
+	footer .row > div > a,
+	.lower_footer p {
+		font-size: 14px;
+	}
+	#image-gallery .lslide {
+		height: 300px;
+	}
+	.rate_like > div {
+		display: block !important;
+		width: 100%;
+		text-align: left;
+		margin: 5px auto;
+	}
+	.rate_like {
+		display: block;
+		padding: 10px 0;
+	}
+	.rate_like > div {
+		display: block !important;
+		text-align: left;
+		margin: 5px auto;
+	}
+	.social_like a img {
+		margin: 0 auto 0 0;
+	}
+	.tab_content .tab-content {
+		margin-top: 20px;
+	}
+	.description_wrapper h1 {
+		font-size: 30px;
+		margin: 0 auto 20px;
+	}
+	.account_wrapper form {
+		margin: 3em 15px;
+	}
+	.img_slider .grid_content {
+		margin: 0;
+	}
+	.img_slider .carousel-item {
+		height: auto;
+	}
+	.filter form {
+		display: block !important;
+	}
+	.filter form > div {
+		margin: 15px 0;
+		-webkit-box-flex: 0;
+		-ms-flex: none;
+		flex: none;
+		max-width: 100%;
+		padding: 0;
+	}
+	.order_container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.order_wrapper table {
+		min-width: 950px;
+	}
+	.our_location {
+		width: 100%;
+		-webkit-box-ordinal-group: 1;
+		-ms-flex-order: 0;
+		order: 0;
+		height: 200px;
+		max-width: 100%;
+	}
+	.account_wrapper form.contact_form {
+		margin: 1em auto;
+		width: 100%;
+		padding: 20px 0 0;
+	}
+	.order_wrapper,
+	.checkout_wrapper {
+		padding-top: 20px;
+	}
+	.contact_wrapper {
+		display: block;
+		padding: 0;
+	}
+	.order_container .grid_section {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.our_location {
+		padding: 0;
+	}
+	.checkout_wrapper > .row > div:not(:last-of-type) {
+		margin-bottom: 20px;
+		padding: 0 20px;
+	}
+	.intro_header h1 {
+		font-size: 30px;
+	}
+	.intro_header {
+		margin-bottom: 20px;
+	}
+	.checkout_wrapper > .row > div {
+		border: none !important;
+	}
+	.checkout_wrapper .search_results {
+		display: none;
+	}
+	.custom_results .card,
+	.custom_results .card-body,
+	.custom_results .card-body .media {
+		display: block;
+		-webkit-box-flex: 0;
+		-ms-flex: none;
+		flex: none;
+	}
+	.search_results .card-body .media > a {
+		width: 100%;
+	}
+	.search_results .media-body {
+		width: 100%;
+	}
+	.modal-dialog {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+	.modal-content .row > div:not(:last-of-type) {
+		margin-bottom: 20px;
+	}
+	.login_with {
+		margin: 30px 0 0;
+	}
+	.user_modal .modal-content {
+		padding: 30px 15px;
+	}
+	.login_with a {
+		max-width: 100%;
+	}
+	.login_with a i {
+		min-width: 40px;
+	}
+}
+@media all and (max-width:575px) {
+	.search_wrapper.static_bg {
+		margin-top: 100px;
+	}
+	.intro_header {
+		margin-top: 85px;
+	}
+	.order_container {
+		padding-top: 85px;
+	}
+	.account_cart_links {
+		position: relative;
+		left: 96px !important;
+		top: 7px;
+		margin: 0 auto !important;
+		width: 100%;
+		text-align: center;
+	}
+	.description_wrapper .main_content {
+		margin: 0;
+	}
+	.account_wrapper form {
+		width: 100%;
+	}
+	.contact_local .grid_content > div .img_wrapper,
+	.travell_bloggers .grid_content > div .img_wrapper {
+		height: auto;
+	}
+	.contact_local .grid_content > div > a,
+	.travell_bloggers .grid_content > div > a {
+		border: none;
+		border-radius: 0;
+		padding: 0;
+		margin-bottom: 20px;
+	}
+	.grid_content > div .img_wrapper,
+	.explore_iceland .grid_content > div .img_wrapper {
+		height: auto;
+		max-height: 300px;
+	}
+	.select_plan {
+		top: auto;
+		bottom: 5px;
+	}
+	.place_name {
+		padding: 10px 0;
+		margin-bottom: 40px;
+	}
+	.main_slider .carousel-caption {
+		bottom: 10%;
+	}
+	.contact_local,
+	.travell_bloggersa,
+	.plan_drive {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.account_cart_links li.choose_language {
+		display: none;
+	}
+	.row > div {
+		max-width: 100%;
+		-webkit-box-flex: 0;
+		-ms-flex: none;
+		margin-top: 5px;
+		flex: none;
+	}
+	.search_wrapper {
+		bottom: 5%;
+		padding: 20px 10px;
+	}
+	.search_wrapper .tab-content {
+		margin-top: 10px;
+	}
+	.search_wrapper .nav-tabs .nav-link i {
+		font-size: 16px;
+	}
+	.search_wrapper .nav-tabs .nav-item {
+		margin-bottom: 10px;
+	}
+	.search_wrapper .nav-tabs .nav-link {
+		font-size: 12px;
+		padding: 10px 5px;
+	}
+	.slider_card {
+		padding: 0 5px;
+	}
+	footer .row > div h4 {
+		font-size: 16px;
+		margin-bottom: 10px
+	}
+	footer .row > div > p,
+	footer .row > div li a,
+	footer .row > div > a,
+	.lower_footer p {
+		font-size: 12px;
+	}
+	.checkout_wrapper .custom-radio label img {
+		margin-left: 0px;
+		max-width: 60px;
+	}
+}
+@media all and (min-width:320px) {
+	.modal-dialog {
+		max-width: 700px;
+	}
+}

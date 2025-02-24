@@ -1,0 +1,1 @@
+<p>Copyright &copy; {{ date('Y') }} of {{ sitename() }}. All rights reserved.</p>
