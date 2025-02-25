@@ -1,0 +1,236 @@
+
+    class Response {
+
+        /**
+         * @var array
+         */
+        protected $_reason_phrases = array(
+            //Informational 1xx
+            100 => "Continue",
+            101 => "Switching Protocols",
+
+            // Successful 2xx
+            200 => "OK",
+            201 => "Created",
+            202 => "Accepted",
+            203 => "Non-Authoritative Information",
+            204 => "No Content",
+            205 => "Reset Content",
+            206 => "Partial Content",
+
+            // Redirection 3xx
+            300 => "Multiple Choices",
+            301 => "Moved Permanently",
+            302 => "Found",
+            303 => "See Other",
+            304 => "Not Modified",
+            305 => "Use Proxy",
+            306 => "(Unused)",
+            307 => "Temporary Redirect",
+
+            // Client Error 4xx
+            400 => "Bad Request",
+            401 => "Unauthorized",
+            402 => "Payment Required",
+            403 => "Forbidden",
+            404 => "Not Found",
+            405 => "Method Not Allowed",
+            406 => "Not Acceptable",
+            407 => "Proxy Authentication Required",
+            408 => "Request Timeout",
+            409 => "Conflict",
+            410 => "Gone",
+            411 => "Length Required",
+            412 => "Precondition Failed",
+            413 => "Request Entity Too Large",
+            414 => "Request-URI Too Long",
+            415 => "Unsupported Media Type",
+            416 => "Requested Range Not Satisfiable",
+            417 => "Expectation Failed",
+
+            // Server Error 5xx
+            500 => "Internal Server Error",
+            501 => "Not Implemented",
+            502 => "Bad Gateway",
+            503 => "Service Unavailable",
+            504 => "Gateway Timeout",
+            505 => "HTTP Version Not Supported"
+        );
+
+        /**
+         * @var integer
+         */
+        protected $_status_code;
+
+        /**
+         * @var string
+         */
+        protected $_body;
+
+        /**
+         * Constructor
+         *
+         * @param   string      $body
+         */
+        public function __construct($body) {
+
+            $this->_body = $body;
+        }
+
+        /**
+         * Constructor
+         *
+         * @param   string      $status_code
+         */
+        public function setStatusCode($status_code) {
+
+            $this->_status_code = $status_code;
+        }
+
+        /**
+         * Get status code
+         *
+         * @return  integer
+         */
+        public function getStatusCode() {
+
+            return $this->_status_code;
+        }
+
+        /**
+         * Get body
+         *
+         * @return  string
+         */
+        public function getBody() {
+
+            return $this->_body;
+        }
+
+        /**
+         * Get body JSON Decoded
+         *
+         * @return  object|null
+         */
+        public function getBodyDecoded() {
+
+            return json_decode($this->_body);
+        }
+
+        /**
+         * Get reason phrase
+         *
+         * @return string|boolean
+         */
+        public function getReasonPhrase() {
+
+            if(array_key_exists($this->_status_code, $this->_reason_phrases)) {
+
+                return $this->_reason_phrases[$this->_status_code];
+            }
+            else {
+
+                return false;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /////////////////////common function/////////////////////////
+    public static function validator($request, $rules) {
+        return $validator = Validator::make($request, $rules);
+    }
+
+    public  static function slug($slug,$cat_name,$model,$id =false) {
+
+        if (!empty($slug)) {
+            $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $slug);
+        } else {
+            $slug= preg_replace('/[^A-Za-z0-9-]+/', '-', $cat_name);
+        }
+        if($id)
+        {
+            $exists =$model::where('slug', 'LIKE', '%'.$slug)->where('id', '!=', $id)->get();
+//            $exists =Category::where('slug', 'LIKE', '%'.$slug.'%')->where('id', '!=', $id)->get();
+        }
+        else{
+//            $exists =Category::where('slug', '=', $slug)->get();
+            $exists =$model::where('slug', 'LIKE', '%'.$slug)->get();
+        }
+        if(sizeof($exists))
+        {
+            $exists = count($exists);
+            $count = $exists+1;
+            for($i=1;$i<=$count; $i++){
+                $cat_slug = $slug."-".$i;
+            }
+            return $cat_slug;
+        }
+        else{
+            return  $cat_slug = $slug;
+        }
+
+
+    }
+    ///////////////////////end common function/////////////////
+    public static function status($model,$status,$id)
+    {
+        if ($status == 'Active') {
+            $model->status = $status;
+            $model->save();
+            echo ' <a href="javascript:void(0);" data-ng-switch="Inactive" id="' . $id . '" title="Active"    class="btn green active">
+                                    <i class="fa fa-check"></i>
+                                </a>';
+        } else {
+            $model->status = $status;
+            $model->save();
+            echo '<a href="javascript:void(0);" data-ng-switch="Active" id="' . $id . '" title="inactive"     class="btn btn-warning active">
+                                    <i class="fa fa-times"></i>
+                                </a>';
+        };
+
+    }
+    public static function make_thumb($path)
+    {
+        $myArray = explode('/', $path);
+        $img = Image::make('public/uploads/'.$path)->resize(320, 240)->save('public/uploads/'.$myArray[0].'/thumb/'.$myArray[1]);
+        return $img;
+    }
+    public static function image_remove($id)
+    {
+        $data = Photo::find($id);
+        $myArray = explode('/', $data->photo);
+        $data->delete();
+        unlink('public/uploads/' . $data->photo);
+        unlink('public/uploads/'.$myArray[0].'/thumb/'.$myArray[1]);
+        return $id;
+    }
+
+
+}
