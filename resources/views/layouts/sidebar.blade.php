@@ -21,7 +21,8 @@
                     </span>
                 </a>
             </li>
-           <!--  <li class="m-menu__item @if(route('orders.index') == URL::current()) m-menu__item--active @endif" aria-haspopup="true">
+            {{-- 
+            <li class="m-menu__item @if(route('orders.index') == URL::current()) m-menu__item--active @endif" aria-haspopup="true">
                 <a href="{{url('/orders')}}" class="m-menu__link ">
                     <i class="m-menu__link-icon flaticon-line-graph"></i>
                     <span class="m-menu__link-title">
@@ -32,7 +33,9 @@
                         </span>
                     </span>
                 </a>
-            </li> -->
+            </li>
+            --}}
+
             <li class="m-menu__section">
                 <h4 class="m-menu__section-text">
                     Sections
