@@ -73,11 +73,14 @@ padding-bottom: 0px !important;
             <div class="m-portlet">
                 <!--begin::Form-->
                 @if(isset($item->id) && !empty($item->id))
-                    {!! Form::model($item, ['url'=> ['admin/administrator',$item->id],'method'=>'PUT','class' => 'm-form m-form--state m-form--fit m-form--label-align-right','id'=>'user-form','files' => true]) !!}
+                <form action="{{ route('administrator.update', $item->id) }}" method="POST" enctype="multipart/form-data" class="m-form m-form--state m-form--fit m-form--label-align-right" id="user-form">
+                    @csrf
+                    @method('PUT')
                 @else
-                    {!! Form::model($item, ['action' => 'Admin\AdminController@store','class' => 'm-form m-form--state m-form--fit m-form--label-align-right','id'=>'user-form','files' => true]) !!}
+                    <form action="{{ route('administrator.store') }}" method="POST" enctype="multipart/form-data" class="m-form m-form--state m-form--fit m-form--label-align-right" id="user-form">
+                    @csrf
                 @endif
-                {!! Form::hidden('id') !!}
+                <input type="hidden" name="id" value="{{ old('id', $item->id ?? '') }}">
 
                 <div class="m-portlet__body">
                     {{--error alert bar--}}
@@ -107,7 +110,7 @@ padding-bottom: 0px !important;
                                 <span class="input-group-addon">
                                     <i class="la la-user"></i>
                                 </span>
-                                {{ Form::text('first_name', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Your First Name')) }}
+                                <input type="text" name="first_name" class="form-control m-input" placeholder="Enter Your First Name" value="{{ old('first_name', $item->first_name ?? '') }}">
 
                             </div>
                             <span class="m-form__help">
@@ -126,7 +129,7 @@ padding-bottom: 0px !important;
                                 <span class="input-group-addon">
                                     <i class="la la-user"></i>
                                 </span>
-                                {{ Form::text('last_name', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Your Last Name')) }}
+                                <input type="text" name="last_name" class="form-control m-input" placeholder="Enter Your Last Name" value="{{ old('last_name', $item->last_name ?? '') }}">
 
                             </div>
                             <span class="m-form__help">
@@ -145,7 +148,7 @@ padding-bottom: 0px !important;
                                 <span class="input-group-addon">
                                     <i class="la la-envelope"></i>
                                 </span>
-                                {{ Form::text('email', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Your Email')) }}
+                                <input type="email" name="email" class="form-control m-input" placeholder="Enter Your Email" value="{{ old('email', $item->email ?? '') }}">
 
                             </div>
                             {{--{{ Form::text('email', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Your Email')) }}--}}
@@ -216,7 +219,7 @@ padding-bottom: 0px !important;
                         </div>
                     </div>
                 </div>
-            {!! Form::close() !!}
+                </form>
             <!--end::Form-->
             </div>
             <!--end::Portlet-->

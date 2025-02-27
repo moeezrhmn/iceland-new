@@ -76,12 +76,24 @@ padding-bottom: 0px !important;
             <!--begin::Portlet-->
             <div class="m-portlet">
                 <!--begin::Form-->
+
+               
+
                 @if(isset($item->id) && !empty($item->id))
-                    {!! Form::model($item, ['url'=> ['admin\categories',$item->id],'method'=>'PUT','class' => 'm-form m-form--state m-form--fit m-form--label-align-right','id'=>'cayegory-form','files' => true]) !!}
+                <form action="{{ url('admin/categories/' . $item->id) }}" method="POST" class="m-form m-form--state m-form--fit m-form--label-align-right" id="category-form" enctype="multipart/form-data">
+                        @method('PUT')
+                    
                 @else
-                    {!! Form::model($item, ['action' => 'Admin\CategoriesController@store','class' => 'm-form m-form--state m-form--fit m-form--label-align-right','id'=>'cayegory-form','files' => true]) !!}
+                    <form action="{{ url('admin/categories') }}" method="POST" class="m-form m-form--state m-form--fit m-form--label-align-right" id="category-form" enctype="multipart/form-data">
                 @endif
-                {!! Form::hidden('id') !!}
+                @csrf
+                <input type="hidden" name="id" value="{{ $item->id ?? '' }}">
+
+
+       
+
+
+          
 
                 <div class="m-portlet__body">
                     {{--error alert bar--}}
@@ -109,7 +121,8 @@ padding-bottom: 0px !important;
                             Category Name<span style="color: red"> *</span>
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
-                                {{ Form::text('cat_name', NULL, array('class' => 'form-control m-input' ,'placeholder' => 'Category Name')) }}
+                            <input type="text" name="cat_name" class="form-control m-input" placeholder="Category Name" value="{{ old('cat_name', $item->cat_name ?? '') }}">
+
                             </div>
                             <span class="m-form__help">
                                 
@@ -125,7 +138,7 @@ padding-bottom: 0px !important;
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
                                
-                                {{ Form::text('slug', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Slug')) }}
+                            <input type="text" name="slug" class="form-control m-input" placeholder="Enter Slug" value="{{ old('slug', $item->slug ?? '') }}">
 
                             </div>
                             {{--{{ Form::text('slug', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Slug')) }}--}}
@@ -143,7 +156,7 @@ padding-bottom: 0px !important;
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
                                
-                                {{ Form::text('code', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Code')) }}
+                            <input type="text" name="code" class="form-control m-input" placeholder="Enter Code" value="{{ old('code', $item->code ?? '') }}">
 
                             </div>
                             {{--{{ Form::text('code', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter code')) }}--}}
@@ -161,7 +174,7 @@ padding-bottom: 0px !important;
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
                                
-                                {{ Form::text('order_no', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Popularity')) }}
+                            <input type="text" name="order_no" class="form-control m-input" placeholder="Enter Popularity" value="{{ old('order_no', $item->order_no ?? '') }}">
 
                             </div>
                             {{--{{ Form::text('slug', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Slug')) }}--}}
@@ -217,7 +230,7 @@ padding-bottom: 0px !important;
                         </div>
                     </div>
                 </div>
-            {!! Form::close() !!}
+            </form>
             <!--end::Form-->
             </div>
             <!--end::Portlet-->

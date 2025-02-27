@@ -3,6 +3,7 @@
 @section('create_page_url', route('categories.create'))
 @section('sub-content')
     <?php
+
     $tableHeadings = [
         'Name',
         'Code',

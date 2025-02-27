@@ -84,7 +84,7 @@ class SubCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        if (Input::has('id')) {
+        if ($request->has('id')) {
             return $this->update($request, 0);
         } else {
             return $this->index();
@@ -150,16 +150,14 @@ class SubCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Input::all();
-    
+        $data = $request->all();
         $additionalCheck = [];
-        
-        $this->validate($request, array_merge([
+
+        $request->validate([
             'cat_name' => 'required',
             'code' => 'required',
             'order_no' => 'required',
-        
-        ], $additionalCheck));
+        ]);
 
         $object = (empty($id)) ? new Category() : Category::find($id);
         $object->cat_name = $data['cat_name'];

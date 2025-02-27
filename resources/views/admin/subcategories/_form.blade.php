@@ -69,11 +69,28 @@
             <div class="m-portlet">
                 <!--begin::Form-->
                 @if(isset($item->id) && !empty($item->id))
-                    {!! Form::model($item, ['url'=> ['admin\subcategories',$item->id],'method'=>'PUT','class' => 'm-form m-form--state m-form--fit m-form--label-align-right','id'=>'subsubcayegory-form','files' => true]) !!}
+                <form action="{{ route('subcategories.update', $item->id) }}" 
+                    method="POST" 
+                    class="m-form m-form--state m-form--fit m-form--label-align-right" 
+                    id="subsubcayegory-form" 
+                    enctype="multipart/form-data">
+
+                    @csrf
+                    @method('PUT')
                 @else
-                    {!! Form::model($item, ['action' => 'Admin\SubCategoriesController@store','class' => 'm-form m-form--state m-form--fit m-form--label-align-right','id'=>'subsubcayegory-form','files' => true]) !!}
+                <form action="{{ route('subcategories.store') }}" 
+                    method="POST" 
+                    class="m-form m-form--state m-form--fit m-form--label-align-right" 
+                    id="subsubcayegory-form" 
+                    enctype="multipart/form-data">
+
+                    @csrf
+
+
+
                 @endif
-                {!! Form::hidden('id') !!}
+                <input type="hidden" name="id" value="{{ old('id', $item->id ?? '') }}">
+
 
                 <div class="m-portlet__body">
                     {{--error alert bar--}}
@@ -107,7 +124,6 @@
                                     @endforeach;
                                 
                                 </select>
-                                <!-- {{ Form::select('parent_id', ['' => 'Select','user' => 'User','role' => 'Role','Permission' => 'Permission'],null, ['class' => 'form-control m-input']) }} -->
 
                             </div>
                             
@@ -122,7 +138,8 @@
                             SubCategory Name<span style="color: red"> *</span>
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
-                                {{ Form::text('cat_name', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter SubCategory Name')) }}
+                            <input type="text" name="cat_name" class="form-control m-input" placeholder="Enter SubCategory Name" value="{{ old('cat_name', $item->cat_name ?? '') }}">
+
                             </div>
                           
                         </div>
@@ -136,7 +153,7 @@
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
                                
-                                {{ Form::text('slug', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Slug')) }}
+                            <input type="text" name="slug" class="form-control m-input" placeholder="Enter Slug" value="{{ old('slug', $item->slug ?? '') }}">
 
                             </div>
                         
@@ -151,7 +168,7 @@
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
                                
-                                {{ Form::text('code', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Code')) }}
+                            <input type="text" name="code" class="form-control m-input" placeholder="Enter Code" value="{{ old('code', $item->code ?? '') }}">
 
                             </div>
                            
@@ -166,7 +183,7 @@
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
                                
-                                {{ Form::text('order_no', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Popularity')) }}
+                            <input type="text" name="order_no" class="form-control m-input" placeholder="Enter Popularity" value="{{ old('order_no', $item->order_no ?? '') }}">
 
                             </div>
                          
@@ -220,7 +237,8 @@
                         </div>
                     </div>
                 </div>
-            {!! Form::close() !!}
+                </form>
+
             <!--end::Form-->
             </div>
             <!--end::Portlet-->

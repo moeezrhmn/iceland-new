@@ -77,8 +77,8 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        if (Input::has('id')) {
+    {   
+        if ($request->has('id')) {
             return $this->update($request, 0);
         } else {
             return $this->index();
@@ -143,8 +143,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $data = Input::all();
+        $data = $request->all();
         $additionalCheck = [];
         if (empty($id) || !empty($request->password)) {
             $additionalCheck['password'] = 'required|min:6';
@@ -153,10 +152,11 @@ class AdminController extends Controller
         } else {
             $additionalCheck['email'] = 'unique:users,email,' . $id;
         }
-        $this->validate($request, array_merge([
+
+        $request->validate([
             'first_name' => 'required|max:150',
-             'last_name' => 'required|max:150',
-        ], $additionalCheck));
+            'last_name' => 'required|max:150',
+        ]);
 
         $object = (empty($id)) ? new User() : User::find($id);
         $object->email = $data['email'];

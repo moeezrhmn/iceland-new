@@ -15,7 +15,7 @@ use Validator;
 use DB;
 //use App\Models\CompanyProfile;
 use App\Models\Category;
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\Photo;
 use App\Models\Reviews;

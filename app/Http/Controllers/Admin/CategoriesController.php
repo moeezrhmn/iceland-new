@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
-use Yajra\DataTables\DataTables;
+// use Yajra\DataTables\DataTables;
+use Yajra\DataTables\Facades\DataTables;
+
 use App\Classes\Functions;
 
 class CategoriesController extends Controller
@@ -43,11 +45,12 @@ public function __construct()
     }
     public function index()
     {
-
-      
         $perPage = 10;
         $items = Category::where('parent_id','0')->take($perPage)->get();
+
         $total = Category::count();
+
+      
         $currentRoute = 'admin::categories';
         $viewData = [
             'items' => $items,
@@ -77,8 +80,8 @@ public function __construct()
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        if (Input::has('id')) {
+    {   
+        if ($request->has('id')) {
             return $this->update($request, 0);
         } else {
             return $this->index();
@@ -143,16 +146,16 @@ public function __construct()
      */
     public function update(Request $request, $id)
     {
-        $data = Input::all();
+
+        $data = $request->all();
     
         $additionalCheck = [];
-        
-        $this->validate($request, array_merge([
+
+        $request->validate([
             'cat_name' => 'required',
             'code' => 'required',
             'order_no' => 'required',
-        
-        ], $additionalCheck));
+        ]);
 
         $object = (empty($id)) ? new Category() : Category::find($id);
         $object->cat_name = $data['cat_name'];
@@ -205,8 +208,8 @@ public function __construct()
     }
 
     public function categoryListing()
-
     {
+       
         $items = Category::where('parent_id','0')->get();
         $currentRoute = str_replace('admin.', '', \Request::route()->getName());
 
