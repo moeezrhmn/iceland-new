@@ -105,9 +105,9 @@
                                     <span class="post_time">{{$values['duration']}}</span>
                                     <div class="d-flex justify-content-center img_wrapper">
                                         @if(isset($values->single_photo)&& !empty($values->single_photo))
-                                        <img src="{{ url('public/uploads/activities'.$values->single_photo->photo) }} " alt="{{@$item->activity_name}}">
+                                        <img src="{{ url('uploads/activities'.$values->single_photo->photo) }} " alt="{{@$item->activity_name}}">
                                         @else
-                                            <img src="{{ url('public/images/no-image.png') }}" alt="No Image">
+                                            <img src="{{ url('images/no-image.png') }}" alt="No Image">
                                         @endif
                                         <div class="d-flex justify-content-center align-items-center hover_txt">
                                             <p>{{strip_tags(substr($values['description'],0,100))}}
@@ -156,7 +156,7 @@
                            <!--  <div class="col-md-4 col-sm-6">
                                 <a href="#">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/landscape24.jpg')}}>
+                                        <img src="{{url('images/landscape24.jpg')}}>
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places

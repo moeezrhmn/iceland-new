@@ -372,13 +372,13 @@
 
                                                     @if($obj->category_id==3)
 
-                                                        <img src="{{url('public/uploads/activities'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}"
+                                                        <img src="{{url('uploads/activities'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}"
 
                                                              style="">
 
                                                     @else
 
-                                                        <img src="{{url('public/uploads/'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}"
+                                                        <img src="{{url('uploads/'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}"
 
                                                              style="">
 
@@ -386,7 +386,7 @@
 
                                                 @else
 
-                                                    <img src="{{url('/public/images/win17.jpg')}}" class="card-img" alt="image"
+                                                    <img src="{{url('/images/win17.jpg')}}" class="card-img" alt="image"
 
                                                          style=""  >
 
@@ -422,7 +422,7 @@
 
                                                     </style>
 
-                                                    <img src="{{url('public/images/map-pink.png')}}" >
+                                                    <img src="{{url('images/map-pink.png')}}" >
 
                                                     <span class="ops"><a href="#">{{@$obj->address->address.', '.@$obj->address->city}}</a></span>
 

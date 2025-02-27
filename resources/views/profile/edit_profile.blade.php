@@ -19,7 +19,7 @@
                       <input type="file" name="file" value="" id="file-6" class="inputfile inputfile-5" data-multiple-caption="{count} files selected"  />
                       <label for="file-6">
                         <div class="profile_image">
-                          <img src="{{url('public/uploads/'.$edit_user->user_photo)}}">
+                          <img src="{{url('uploads/'.$edit_user->user_photo)}}">
                           <i class="fas fa-camera"></i>
                         </div>
                         <span></span>

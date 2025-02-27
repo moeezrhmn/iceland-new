@@ -219,7 +219,7 @@
     public static function make_thumb($path)
     {
         $myArray = explode('/', $path);
-        $img = Image::make('public/uploads/'.$path)->resize(320, 240)->save('public/uploads/'.$myArray[0].'/thumb/'.$myArray[1]);
+        $img = Image::make('uploads/'.$path)->resize(320, 240)->save('uploads/'.$myArray[0].'/thumb/'.$myArray[1]);
         return $img;
     }
     public static function image_remove($id)
@@ -227,8 +227,8 @@
         $data = Photo::find($id);
         $myArray = explode('/', $data->photo);
         $data->delete();
-        unlink('public/uploads/' . $data->photo);
-        unlink('public/uploads/'.$myArray[0].'/thumb/'.$myArray[1]);
+        unlink('uploads/' . $data->photo);
+        unlink('uploads/'.$myArray[0].'/thumb/'.$myArray[1]);
         return $id;
     }
 

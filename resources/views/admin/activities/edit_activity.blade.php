@@ -318,7 +318,7 @@ exit;
                                                    <?php echo ($photoobj->main == 1) ? 'checked' : ''; ?> value="{{$photoobj->photo_id}}">
                                         </div>
                                         <img alt="hotel image" style="width:125px;height:125px;"
-                                             src="{{url('public/uploads/'.$photoobj->photo)}}"/>
+                                             src="{{url('uploads/'.$photoobj->photo)}}"/>
                                         <div>
                                         </div>
                                         <a href="javascript:void(0);" class=" MultiFile-remove image_remove"

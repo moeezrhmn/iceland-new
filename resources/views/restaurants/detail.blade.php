@@ -18,8 +18,8 @@
                                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                                     @if(sizeof($item->photo) )
                                         @foreach($item->photo  as $row )
-                                            <li data-thumb="{{ url('public/uploads/'.@$row->photo) }}">
-                                                <img src="{{ url('public/uploads/'.@$row->photo) }}">
+                                            <li data-thumb="{{ url('uploads/'.@$row->photo) }}">
+                                                <img src="{{ url('uploads/'.@$row->photo) }}">
                                             </li>
                                         @endforeach
                                     @endif
@@ -27,7 +27,7 @@
                             </div>
                             <div class="row rate_like">
                                 <div class="col d-flex justify-content-start social_like">
-                                    <a href="#"><img src="{{url('public/images/like.png')}}"></a>
+                                    <a href="#"><img src="{{url('images/like.png')}}"></a>
                                 </div>
                                 <div class="col d-flex justify-content-end">
                                     <span>Rate Us</span>
@@ -151,7 +151,7 @@ exit;*/
                                                   @if(!empty($reviews))
                                                     @foreach($reviews as $review)
                                                    <li class="media">
-                                                        <img class="mr-3" src="{{url('public/uploads/'.$review->user_detail->user_photo)}}"
+                                                        <img class="mr-3" src="{{url('uploads/'.$review->user_detail->user_photo)}}"
                                                              alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <h4 class="mt-0 mb-1">{{$review->user_detail->first_name}} {{$review->user_detail->last_name}}</h4>
@@ -161,7 +161,7 @@ exit;*/
                                                     @endforeach
                                                     @endif
                                                    <!--  <li class="media my-4">
-                                                        <img class="mr-3" src="{{url('public/images/0.jpg')}}"
+                                                        <img class="mr-3" src="{{url('images/0.jpg')}}"
                                                              alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <h4 class="mt-0 mb-1">List-based media object</h4>
@@ -173,7 +173,7 @@ exit;*/
                                                         </div>
                                                     </li>
                                                     <li class="media">
-                                                        <img class="mr-3" src="{{url('public/images/0.jpg')}}"
+                                                        <img class="mr-3" src="{{url('images/0.jpg')}}"
                                                              alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <h4 class="mt-0 mb-1">List-based media object</h4>

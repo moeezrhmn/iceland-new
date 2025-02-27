@@ -75,7 +75,7 @@ padding-bottom: 0px !important;
                                             </div>
                                             <div class="m-card-profile__pic">
                                                 <div class="m-card-profile__pic-wrapper" style="margin: 0px;border: 0px;height: 106px;">
-                                                    <img style="height: 106px" src="{{url('public/uploads/'.$edit_user->user_photo)}}" alt="">
+                                                    <img style="height: 106px" src="{{url('uploads/'.$edit_user->user_photo)}}" alt="">
                                                 </div>
                                                <!-- change image -->
                                                   <div class=" m-form__group row">

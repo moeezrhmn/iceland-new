@@ -16,12 +16,12 @@
                                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                                     @if(sizeof($item->photo) )
                                         @foreach($item->photo  as $row )
-                                        @if(@empty($row->photo) && file_exists(public_path('public/uploads/'.@$row->photo)))
-                                            <li data-thumb="{{ url('public/uploads/'.@$row->photo) }}">
-                                                <img src="{{ url('public/uploads/'.@$row->photo) }}">
+                                        @if(@empty($row->photo) && file_exists(public_path('uploads/'.@$row->photo)))
+                                            <li data-thumb="{{ url('uploads/'.@$row->photo) }}">
+                                                <img src="{{ url('uploads/'.@$row->photo) }}">
                                             </li>
                                             @else
-                                              <img src="{{url('/public/images/no-image.png')}}"
+                                              <img src="{{url('/images/no-image.png')}}"
                                                                  class="img-responsive" alt="image">
                                               @endif
                                         @endforeach
@@ -32,19 +32,19 @@
                                 <div class="col d-flex justify-content-start social_like">
                                     @if(sizeof($item->photo) )
                                         @foreach($item->photo  as $row )
-                                        @if(@empty($row->photo) && file_exists(public_path('public/uploads/'.@$row->photo)))
-                                            <li data-thumb="{{ url('public/uploads/'.@$row->photo) }}">
-                                                <img src="{{ url('public/uploads/'.@$row->photo) }}">
+                                        @if(@empty($row->photo) && file_exists(public_path('uploads/'.@$row->photo)))
+                                            <li data-thumb="{{ url('uploads/'.@$row->photo) }}">
+                                                <img src="{{ url('uploads/'.@$row->photo) }}">
                                             </li>
                                             @else
                                             {{@$row->photo}}
-                                              <img src="{{url('/public/images/no-image.png')}}"
+                                              <img src="{{url('/images/no-image.png')}}"
                                                                  class="img-responsive" alt="image">
                                               @endif
                                         @endforeach
                                     @endif
                                     <!-- <a href="#">
-                                        <img src="{{url('public/images/like.png')}}">
+                                        <img src="{{url('images/like.png')}}">
                                     </a> -->
                                 </div>
                                 <div class="col d-flex justify-content-end">
@@ -159,7 +159,7 @@
                                                  aria-labelledby="v-pills-reviews-tab">
                                                 <ul class="list-unstyled">
                                                     <li class="media">
-                                                        <img class="mr-3" src="{{url('public/images/0.jpg')}}"
+                                                        <img class="mr-3" src="{{url('images/0.jpg')}}"
                                                              alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <h4 class="mt-0 mb-1">List-based media object</h4>
@@ -167,7 +167,7 @@
                                                         </div>
                                                     </li>
                                                     <li class="media my-4">
-                                                        <img class="mr-3" src="{{url('public/images/0.jpg')}}"
+                                                        <img class="mr-3" src="{{url('images/0.jpg')}}"
                                                              alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <h4 class="mt-0 mb-1">List-based media object</h4>
@@ -179,7 +179,7 @@
                                                         </div>
                                                     </li>
                                                     <li class="media">
-                                                        <img class="mr-3" src="{{url('public/images/0.jpg')}}"
+                                                        <img class="mr-3" src="{{url('images/0.jpg')}}"
                                                              alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <h4 class="mt-0 mb-1">List-based media object</h4>

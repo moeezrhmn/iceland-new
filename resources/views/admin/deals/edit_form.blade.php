@@ -166,7 +166,7 @@
               <div class="main-img-preview"  style="">
 
                 @if(isset($deals->deals_image) && !empty($deals->deals_image))
-                 <img class="thumbnail img-preview" src="{{url('public/uploads/'.$deals->deals_image)}}" title="Preview Logo" style="width: 100%">
+                 <img class="thumbnail img-preview" src="{{url('uploads/'.$deals->deals_image)}}" title="Preview Logo" style="width: 100%">
                 @else
                  <img class="thumbnail img-preview" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" title="Preview Logo" style="width: 100%">
                 @endif

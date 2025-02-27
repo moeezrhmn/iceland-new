@@ -33,9 +33,9 @@
                                         <span class="post_time">{{$values['duration']}}</span>
                                         <div class="d-flex justify-content-center img_wrapper">
                                             @if(isset($values->photo)&& !empty($values->photo))
-                                                <img src="{{ url('public/uploads/activities/'.$values->photo) }}" alt="{{$values['name']}}">
+                                                <img src="{{ url('uploads/activities/'.$values->photo) }}" alt="{{$values['name']}}">
                                             @else
-                                                <img src="{{ url('public/images/no-image.png') }} "  alt="{{$values['name']}}">
+                                                <img src="{{ url('images/no-image.png') }} "  alt="{{$values['name']}}">
                                             @endif
                                             <div class="d-flex justify-content-center align-items-center hover_txt">
                                                 <p>{{ strip_tags( substr( $values['description'],0,100) ) }}
@@ -103,7 +103,7 @@
                                     <a href="{{url('restaurants/detail/'.$obj->slug)}}">
 
                                         <div class="d-flex justify-content-center img_wrapper">
-                                            <img src="{{asset('public/uploads/'.$obj->photo)}}">
+                                            <img src="{{asset('uploads/'.$obj->photo)}}">
                                             <div class="d-flex justify-content-center align-items-center hover_txt">
                                                 {{--<p> {{str_limit(strip_tags(trim($obj->description)),80, '...')}} <span>read more...</span></p>--}}
                                             </div>
@@ -147,7 +147,7 @@
                                     <a href="{{url('places/detail/'.$obj->slug)}}">
 
                                         <div class="d-flex justify-content-center img_wrapper">
-                                            <img src="{{asset('public/uploads/'.$obj->photo)}}">
+                                            <img src="{{asset('uploads/'.$obj->photo)}}">
                                             <div class="d-flex justify-content-center align-items-center hover_txt">
                                                 {{--<p> {{str_limit(strip_tags(trim($obj->description)),80, '...')}} <span>read more...</span></p>--}}
                                             </div>

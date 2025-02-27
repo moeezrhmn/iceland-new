@@ -50,13 +50,13 @@
         <div class="description_wrapper">
             <div id="social-links" class=" d-none d-sm-block">
                 <ul>
-                    {{--<li class="shareSocialLi"><a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&picture={{url('public/uploads/'.@$item->photo[0]->photo)}}" class="social-button " id="">--}}
+                    {{--<li class="shareSocialLi"><a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&picture={{url('uploads/'.@$item->photo[0]->photo)}}" class="social-button " id="">--}}
                     <li class="shareSocialLi"><a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;" class="social-button " id="">
                             <i class="fa fa-facebook"></i></a></li>
-                    <li class="shareSocialLi"><a href="https://twitter.com/intent/tweet?url={{url()->current()}}&picture={{url('public/uploads/'.@$item->photo[0]->photo)}}&text={{@$item->restaurant_name}}{{@$item->place_name}}" class="social-button " id="">
+                    <li class="shareSocialLi"><a href="https://twitter.com/intent/tweet?url={{url()->current()}}&picture={{url('uploads/'.@$item->photo[0]->photo)}}&text={{@$item->restaurant_name}}{{@$item->place_name}}" class="social-button " id="">
                             <i class="fa fa-twitter"></i></a></li>
                     {{--<li class="shareSocialLi"><a href="https://twitter.com/intent/tweet?url={{@$item->restaurant_name}}{{@$item->slug}}{!!@$item->description!!}&amp;url={{url()->current()}}" class="social-button " id="">
-                            <img src="{{asset('public/images/twitter.jpg')}}" alt=""></a></li>--}}
+                            <img src="{{asset('images/twitter.jpg')}}" alt=""></a></li>--}}
                     <li class="shareSocialLi"><a href="https://plus.google.com/share?url={{url()->current()}}&image={{@$item->photo[0]->photo}}" class="social-button " id="">
                             <i class="fa fa-google"></i></a></li>
                     {{--<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://jorenvanhocht.be&amp;title=my share text&amp;summary=dit is de linkedin summary" class="social-button " id=""><span class="fa fa-linkedin"></span></a></li>--}}
@@ -67,7 +67,7 @@
                 <h2 style="font-size: 30px;margin-bottom: 15px;">{{@$item->place_name}}</h2>
                 {{--style="margin-bottom: 0rem;"--}}
                 <div class="row" style="margin-bottom: 15px;">
-                <div class="col-md-12"><img src="{{url('public/images/map-pink.png')}}" class="pull-left">
+                <div class="col-md-12"><img src="{{url('images/map-pink.png')}}" class="pull-left">
                     <a href="#" style="margin-left: 10px;">{{@$item->address->address}}</a>
                 </div>
                 </div>
@@ -82,8 +82,8 @@
                                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                                     @if(sizeof($item->photo) )
                                         @foreach($item->photo  as $row )
-                                            <li data-thumb="{{ url('public/uploads/'.@$row->photo) }}">
-                                                <img src="{{ url('public/uploads/'.@$row->photo) }}">
+                                            <li data-thumb="{{ url('uploads/'.@$row->photo) }}">
+                                                <img src="{{ url('uploads/'.@$row->photo) }}">
                                             </li>
                                         @endforeach
                                     @endif
@@ -91,7 +91,7 @@
                             </div>
                             <div class="row rate_like">
                                 {{--<div class="col d-flex justify-content-start social_like">
-                                    <a href="#"><img src="{{url('public/images/like.png')}}"></a>
+                                    <a href="#"><img src="{{url('images/like.png')}}"></a>
                                 </div>--}}
                                 <div class="col d-flex justify-content-end">
                                     @if(isset($item->reviews_avg->rating) && !empty($item->reviews_avg->rating))
@@ -311,9 +311,9 @@
                                                         @foreach($reviews as $review)
                                                             <li class="media">
                                               @if(isset($review->user_detail->user_photo))
-                                                <img class="mr-3" src="{{url('public/uploads/'.$review->user_detail->user_photo)}}" alt="">
+                                                <img class="mr-3" src="{{url('uploads/'.$review->user_detail->user_photo)}}" alt="">
                                                  @else
-                                                 <img class="mr-3" src=" {{url('public/images/0.jpg')}}" alt="">
+                                                 <img class="mr-3" src=" {{url('images/0.jpg')}}" alt="">
                                                 @endif
 
                                                                 <div class="media-body">
@@ -324,7 +324,7 @@
                                                     @endforeach
                                                 @endif
                                                 <!--  <li class="media my-4">
-                                                        <img class="mr-3" src="{{url('public/images/0.jpg')}}"
+                                                        <img class="mr-3" src="{{url('images/0.jpg')}}"
                                                              alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <h4 class="mt-0 mb-1">List-based media object</h4>
@@ -336,7 +336,7 @@
                                                         </div>
                                                     </li>
                                                     <li class="media">
-                                                        <img class="mr-3" src="{{url('public/images/0.jpg')}}"
+                                                        <img class="mr-3" src="{{url('images/0.jpg')}}"
                                                              alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <h4 class="mt-0 mb-1">List-based media object</h4>

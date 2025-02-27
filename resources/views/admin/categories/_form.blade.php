@@ -187,7 +187,7 @@ padding-bottom: 0px !important;
                           <div class="form-group" style="width: 55%;padding-left: 15px;">
               <div class="main-img-preview"  style="">
                 @if(isset($item->cat_image) && !empty($item->cat_image))
-                 <img class="thumbnail img-preview" src="{{url('public/uploads/'.$item->cat_image)}}" title="Preview Logo" style="width: 100%">
+                 <img class="thumbnail img-preview" src="{{url('uploads/'.$item->cat_image)}}" title="Preview Logo" style="width: 100%">
                 @else
                  <img class="thumbnail img-preview" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" title="Preview Logo" style="width: 100%">
                 @endif

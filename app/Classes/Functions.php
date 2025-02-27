@@ -110,7 +110,7 @@ class Functions
     public static function make_thumb($path)
     {
         $myArray = explode('/', $path);
-        $img = Image::make('public/uploads/' . $path)->resize(320, 240)->save('public/uploads/' . $myArray[0] . '/thumb/' . $myArray[1]);
+        $img = Image::make('uploads/' . $path)->resize(320, 240)->save('uploads/' . $myArray[0] . '/thumb/' . $myArray[1]);
         return $img;
     }
 
@@ -119,13 +119,13 @@ class Functions
         $data = Photo::find($id);
   
         $data->delete();
-        if(file_exists(public_path().'public/uploads/'.$data->photo)) {
-           // rename(public_path().'public/uploads/'.$data->photo, public_path().'/uploads/trash/'.$data->photo);
-            unlink('public/uploads/' . $data->photo);
+        if(file_exists(public_path().'uploads/'.$data->photo)) {
+           // rename(public_path().'uploads/'.$data->photo, public_path().'/uploads/trash/'.$data->photo);
+            unlink('uploads/' . $data->photo);
         }
         if(file_exists(public_path().'/uploads/thumb/'.$data->photo)) {
             rename(public_path().'/uploads/'.$data->photo, public_path().'/uploads/trash/'.$data->photo);
-            //unlink('public/uploads/' . $myArray[0] . '/thumb/' . $myArray[1]);
+            //unlink('uploads/' . $myArray[0] . '/thumb/' . $myArray[1]);
         }
         return $id;
     }

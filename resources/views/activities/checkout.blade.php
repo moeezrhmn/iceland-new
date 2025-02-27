@@ -222,14 +222,14 @@
                                 {{--<div class="form-group mt-4">--}}
                                     {{--<div class="mr-3 custom-control-inline custom-control custom-radio">--}}
                                         {{--<input type="radio" id="customRadio1" name="customRadio" checked class="custom-control-input">--}}
-                                        {{--<label class="custom-control-label" for="customRadio1"><img src="{{url('public/')}}/images/pay1.png">--}}
-                                            {{--<img src="{{url('public/')}}/images/pay3.png">--}}
+                                        {{--<label class="custom-control-label" for="customRadio1"><img src="{{url('')}}/images/pay1.png">--}}
+                                            {{--<img src="{{url('')}}/images/pay3.png">--}}
 
                                         {{--</label>--}}
                                     {{--</div>--}}
                                     {{--<div class="custom-control-inline custom-control custom-radio">--}}
                                         {{--<input type="radio" id="payment" name="customRadio"  class="custom-control-input">--}}
-                                        {{--<label class="custom-control-label" for="payment"><img src="{{url('public/')}}/images/pay4.png"></label>--}}
+                                        {{--<label class="custom-control-label" for="payment"><img src="{{url('')}}/images/pay4.png"></label>--}}
                                     {{--</div>--}}
                                 {{--</div>--}}
                                         <button type="submit" class="btn hvr-float-shadow view_all">Pay</button>
@@ -268,14 +268,14 @@
                                             {{--@if(!empty($itemCart['image']) && file_exists(public_path().'/uploads/'.$itemCart['image']))--}}
                                                 <img class="card-img-top" src="{{@$product[$i]->product->keyPhoto->derived[1]->url}}" alt="Card image cap">
                                             {{--@else--}}
-                                                {{--<img class="card-img-top" src="{{url('public/images/img2.jpg')}}" alt="Card image cap">--}}
+                                                {{--<img class="card-img-top" src="{{url('images/img2.jpg')}}" alt="Card image cap">--}}
                                             {{--@endif--}}
                                                 <div class="card-body">
 
                                                 <div class="media-body">
                                                     <h5>{{@$product[$i]->product->title}}</h5>
                                                     <p>
-                                                        {{--<img src="{{url('public/')}}/images/map-pink.png">--}}
+                                                        {{--<img src="{{url('')}}/images/map-pink.png">--}}
                                                         {{--<span>0.5 mi to Sydney center</span>--}}
                                                     </p>
                                                     <ul>
@@ -313,13 +313,13 @@
 
                                    {{-- <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
                                         <div class="card text-left">
-                                            <img class="card-img-top" src="{{url('public/images/lancscape1.jpg')}}" alt="Card image cap">
+                                            <img class="card-img-top" src="{{url('images/lancscape1.jpg')}}" alt="Card image cap">
                                             <div class="card-body">
 
                                                 <div class="media-body">
                                                     <h5>College st 1 Bedroom with Balcony</h5>
                                                     <p>
-                                                        <img src="{{url('public/')}}/images/map-pink.png">
+                                                        <img src="{{url('')}}/images/map-pink.png">
                                                         <span>0.5 mi to Sydney center</span>
                                                     </p>
                                                     <ul>
@@ -347,13 +347,13 @@
                                     </div>
                                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
                                         <div class="card text-left">
-                                            <img class="card-img-top" src="{{url('public/images/lancscape1.jpg')}}" alt="Card image cap">
+                                            <img class="card-img-top" src="{{url('images/lancscape1.jpg')}}" alt="Card image cap">
                                             <div class="card-body">
 
                                                 <div class="media-body">
                                                     <h5>College st 1 Bedroom with Balcony</h5>
                                                     <p>
-                                                        <img src="{{url('public/')}}/images/map-pink.png">
+                                                        <img src="{{url('')}}/images/map-pink.png">
                                                         <span>0.5 mi to Sydney center</span>
                                                     </p>
                                                     <ul>

@@ -74,7 +74,7 @@
 
                 <div class="carousel-item active">
 
-                    <img class="d-block w-100 h-100" src="{{url('public/images/search/1.png')}}"
+                    <img class="d-block w-100 h-100" src="{{url('images/search/1.png')}}"
 
                          alt="First slide">
 
@@ -82,7 +82,7 @@
 
                 <div class="carousel-item">
 
-                    <img class="d-block w-100 h-100" src="{{url('public/images/search/2.png')}}"
+                    <img class="d-block w-100 h-100" src="{{url('images/search/2.png')}}"
 
                          alt="Second slide">
 
@@ -90,7 +90,7 @@
 
                 <div class="carousel-item">
 
-                    <img class="d-block w-100 h-100" src="{{url('public/images/search/3.png')}}"
+                    <img class="d-block w-100 h-100" src="{{url('images/search/3.png')}}"
 
                          alt="Third slide">
 
@@ -98,7 +98,7 @@
 
                 <div class="carousel-item">
 
-                    <img class="d-block w-100 h-100" src="{{url('public/images/search/4.png')}}"
+                    <img class="d-block w-100 h-100" src="{{url('images/search/4.png')}}"
 
                          alt="Second slide">
 
@@ -106,7 +106,7 @@
 
                 <div class="carousel-item">
 
-                    <img class="d-block w-100 h-100" src="{{url('public/images/search/5.png')}}"
+                    <img class="d-block w-100 h-100" src="{{url('images/search/5.png')}}"
 
                          alt="Third slide">
 
@@ -114,7 +114,7 @@
 
                 {{--<div class="carousel-item">--}}
 
-                    {{--<img class="d-block w-100 h-100" src="{{url('public/images/lancscape6.jpg')}}"--}}
+                    {{--<img class="d-block w-100 h-100" src="{{url('images/lancscape6.jpg')}}"--}}
 
                          {{--alt="Second slide">--}}
 
@@ -623,21 +623,21 @@
 
 
 
-                                                    @if(!empty($obj->single_photo->photo) && file_exists(public_path('public/uploads/'.@$obj->single_photo->photo)))
+                                                    @if(!empty($obj->single_photo->photo) && file_exists(public_path('uploads/'.@$obj->single_photo->photo)))
 
                                                         @if(!empty($obj->single_photo->photo))
 
                                                             @if($obj->category_id==3)
 
-                                                                <img src="{{url('public/uploads/activities'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}">
+                                                                <img src="{{url('uploads/activities'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}">
 
                                                             @else
 
-                                                                <img src="{{url('public/uploads/'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}">
+                                                                <img src="{{url('uploads/'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}">
 
                                                             @endif
 
-                                                            <img src="{{url('public/uploads/activities'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}">
+                                                            <img src="{{url('uploads/activities'.@$obj->single_photo->photo)}}" alt="{{@$obj->place_name}}">
 
                                                         @else
 
@@ -669,7 +669,7 @@
 
                                                     <p>
 
-                                                        <img src="{{url('public/images/map-pink.png')}}" >
+                                                        <img src="{{url('images/map-pink.png')}}" >
 
                                                         <span><a href="#">{{@$obj->address->address.', '.@$obj->address->city}}</a></span>
 

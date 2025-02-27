@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Add Restaurant')
 @section('header_space')
-    <link href="{{ asset('public/admin/css/select2.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin_outer/css/select2.css') }}" rel="stylesheet" type="text/css" />
 <style type="text/css">
     .m-form.m-form--state.m-form--fit.m-form--label-align-right{
         padding-bottom: 10px;
@@ -279,7 +279,7 @@
    
      <script src="{{ asset('assets/demo/default/custom/components/forms/widgets/summernote.js') }}"></script>
 
-   <script type="{{ asset('public/admin/js/select2.js') }}"></script>
+   <script type="{{ asset('admin_outer/js/select2.js') }}"></script>
     <script type="text/javascript">
          $(document).ready(
     function () {

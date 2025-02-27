@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('header_space')
     <link href="{{ asset('assets/datatable/datatable_responsive.css') }}" rel="stylesheet" type="text/css"/>
-    {{--<link href="{{ asset('admin/css/jquery.dataTables.css') }}" rel="stylesheet" type="text/css"/>--}}
+    {{--<link href="{{ asset('admin_outer/css/jquery.dataTables.css') }}" rel="stylesheet" type="text/css"/>--}}
     {{--<link href="http://cdn.datatables.net/1.10.0/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>  --}}
     <link rel="stylesheet" href="{{ asset('assets/datatable/jquery.dataTables.min.css') }}">
     <link href="{{ asset('assets/sweet_alert/sweetalert.min.css') }}" rel="stylesheet" type="text/css"/>

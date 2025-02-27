@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Edit Place')
 @section('header_space')
-    <link href="{{ asset('public/admin/css/select2.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin_outer/css/select2.css') }}" rel="stylesheet" type="text/css" />
     <style type="text/css">
     .form-group.m-form__group.row{
         padding-bottom: 10px;
@@ -70,7 +70,7 @@
                         <div class="profile-userpic">
                             @if($edit_user->user_photo)
 
-                                <img class="img-responsive" src="{{url('public/uploads/'.$edit_user->user_photo)}}" alt="" />
+                                <img class="img-responsive" src="{{url('uploads/'.$edit_user->user_photo)}}" alt="" />
                             @else
                                 <img class="img-responsive" src="{{ asset('assets/admin/images/demo.jpg') }}" alt="" />
                             @endif
@@ -225,7 +225,7 @@
                                                         <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
                                                             @if($edit_user->user_photo)
 
-                                                                <img class="img-responsive" src="{{url('public/uploads/'.$edit_user->user_photo)}}" alt="" />
+                                                                <img class="img-responsive" src="{{url('uploads/'.$edit_user->user_photo)}}" alt="" />
                                                             @else
                                                                 <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
                                                                 {{--<img class="img-responsive" src="{{ asset('assets/admin/images/demo.jpg') }}" alt="" />--}}
@@ -344,7 +344,7 @@
 
    <script src="{{ asset('assets/pages/places/create.js') }}"></script>
 
-     <script type="{{ asset('public/admin/js/select2.js') }}"></script>
+     <script type="{{ asset('admin_outer/js/select2.js') }}"></script>
     <script type="text/javascript">
          $(document).ready(
     function () {

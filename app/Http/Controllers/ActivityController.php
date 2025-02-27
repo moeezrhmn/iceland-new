@@ -238,12 +238,12 @@ dump($products->count());
                 $data['name'] = @$obj->activity_name;
                 $data['location_latitude'] = @$obj->single_address->latitude;
                 $data['location_longitude'] = @$obj->single_address->longitude;
-                $data['map_image_url'] = $map_image = url('/public/uploads/restaurants/' . @$obj->single_photo->photo);
-                $data['map_pin_image_url'] = url('/public/uploads/restaurants/' . @$subcat->cat_image);
+                $data['map_image_url'] = $map_image = url('/uploads/restaurants/' . @$obj->single_photo->photo);
+                $data['map_pin_image_url'] = url('/uploads/restaurants/' . @$subcat->cat_image);
                 $data['name_point'] = @$obj->place_name;
                 $data['description_point'] = str_limit(strip_tags(trim($obj->description)), 100, '....');
                 $icon = str_replace("subcategory", "thumb", @$subcat->cat_image);
-                $data['get_directions_start_address'] = url('/public/uploads/subcategory/' . $icon);
+                $data['get_directions_start_address'] = url('/uploads/subcategory/' . $icon);
                 $data['phone'] = @$obj->phone;
                 $data['url_point'] = url('restaurants/detail/' . @$obj->slug);
                 $place_list[] = $data;
@@ -493,7 +493,7 @@ dump($products->count());
 //        foreach ($hotelBed['photo'] as $photoObj) {
 ////            $explode = explode('/', $photoObj['photo']);
 ////           // $rand = mt_rand();
-////            $path = $_SERVER['DOCUMENT_ROOT'] . '/tripxonic/public/uploads/places/' . $explode[2];
+////            $path = $_SERVER['DOCUMENT_ROOT'] . '/tripxonic/uploads/places/' . $explode[2];
 ////            file_put_contents($path, file_get_contents($photoObj['photo']));
 ////            $imgUrl = 'places/' . $explode[6];
 //
@@ -547,7 +547,7 @@ dump($products->count());
         foreach ($hotelBed['photo'] as $photoObj) {
 //            $explode = explode('/', $photoObj['photo']);
 //           // $rand = mt_rand();
-//            $path = $_SERVER['DOCUMENT_ROOT'] . '/tripxonic/public/uploads/places/' . $explode[2];
+//            $path = $_SERVER['DOCUMENT_ROOT'] . '/tripxonic/uploads/places/' . $explode[2];
 //            file_put_contents($path, file_get_contents($photoObj['photo']));
 //            $imgUrl = 'places/' . $explode[6];
 
@@ -706,7 +706,7 @@ dump($products->count());
 //       dd($pdf_report);
         $order = Order::where('track_id', $id)->first();
         $bookingConfirm = Functions::HotelBedActivityAuthentication('https://api.test.hotelbeds.com/activity-api/3.0/bookings/en/' . $order->track_id);
-        //        $resp = file_get_contents(url('public/hotel_beds/hotels_booking_confirm.json'));
+        //        $resp = file_get_contents(url('hotel_beds/hotels_booking_confirm.json'));
 //        $bookingConfirm = json_decode($resp);
         if (isset($bookingConfirm->booking) && !empty($bookingConfirm->booking)) {
             $formData['track_id'] = $bookingConfirm->booking->reference;
@@ -907,7 +907,7 @@ dump($products->count());
             /*  $option_list .= '<div class="col-md-4 col-sm-6">
                                      <a href="'.url('restaurants/').'/'.$row->slug.'">
                                          <div class="d-flex justify-content-center img_wrapper">
-                                             <img src="'.url('public/uploads/').'/'.$row->cat_image.'">
+                                             <img src="'.url('uploads/').'/'.$row->cat_image.'">
                                              <div class="hover_txt">
                                                  <h4>'.$row->cat_name.'</h4>
 
@@ -1089,12 +1089,12 @@ dump($products->count());
                 $data['name'] = @$obj->activity_name;
                 $data['location_latitude'] = @$obj->address->latitude;
                 $data['location_longitude'] = @$obj->address->longitude;
-                $data['map_image_url'] = $map_image = url('/public/uploads/restaurants/' . @$obj->single_photo->photo);
-                $data['map_pin_image_url'] = url('/public/uploads/restaurants/' . @$subcat->cat_image);
+                $data['map_image_url'] = $map_image = url('/uploads/restaurants/' . @$obj->single_photo->photo);
+                $data['map_pin_image_url'] = url('/uploads/restaurants/' . @$subcat->cat_image);
                 $data['name_point'] = @$obj->place_name;
                 $data['description_point'] = str_limit(strip_tags(trim($obj->description)), 100, '....');
                 $icon = str_replace("subcategory", "thumb", @$subcat->cat_image);
-                $data['get_directions_start_address'] = url('/public/uploads/subcategory/' . $icon);
+                $data['get_directions_start_address'] = url('/uploads/subcategory/' . $icon);
                 $data['phone'] = @$obj->phone;
                 $data['url_point'] = url('restaurants/detail/' . @$obj->slug);
                 $place_list[] = $data;
@@ -1203,12 +1203,12 @@ dump($products->count());
                 $data['name'] = @$obj->activity_name;
                 $data['location_latitude'] = @$obj->address->latitude;
                 $data['location_longitude'] = @$obj->address->longitude;
-                $data['map_image_url'] = $map_image = url('/public/uploads/places/' . @$obj->single_photo->photo);
-                $data['map_pin_image_url'] = url('/public/uploads/places/' . @$subcat->cat_image);
+                $data['map_image_url'] = $map_image = url('/uploads/places/' . @$obj->single_photo->photo);
+                $data['map_pin_image_url'] = url('/uploads/places/' . @$subcat->cat_image);
                 $data['name_point'] = @$obj->activity_name;
                 $data['description_point'] = str_limit(strip_tags(trim($obj->description)), 100, '....');
                 $icon = str_replace("subcategory", "thumb", @$subcat->cat_image);
-                $data['get_directions_start_address'] = url('/public/uploads/subcategory/' . $icon);
+                $data['get_directions_start_address'] = url('/uploads/subcategory/' . $icon);
                 $data['phone'] = @$obj->phone;
                 $data['url_point'] = url('places/detail/' . @$obj->slug);
                 $place_list[] = $data;
@@ -1379,12 +1379,12 @@ dump($products->count());
                 $data['name'] = @$obj->activity_name;
                 $data['location_latitude'] = @$obj->address->latitude;
                 $data['location_longitude'] = @$obj->address->longitude;
-                $data['map_image_url'] = $map_image = url('/public/uploads/activities/' . @$obj->single_photo->photo);
-                $data['map_pin_image_url'] = url('/public/uploads/activities/' . @$subcat->cat_image);
+                $data['map_image_url'] = $map_image = url('/uploads/activities/' . @$obj->single_photo->photo);
+                $data['map_pin_image_url'] = url('/uploads/activities/' . @$subcat->cat_image);
                 $data['name_point'] = @$obj->activity_name;
                 $data['description_point'] = str_limit(strip_tags(trim($obj->description)), 100, '....');
                 $icon = str_replace("subcategory", "thumb", @$subcat->cat_image);
-                $data['get_directions_start_address'] = url('/public/uploads/subcategory/' . $icon);
+                $data['get_directions_start_address'] = url('/uploads/subcategory/' . $icon);
                 $data['phone'] = @$obj->phone;
                 $data['url_point'] = url('places/detail/' . @$obj->slug);
                 $place_list[] = $data;
@@ -1517,7 +1517,7 @@ dump($products->count());
         $hotelBedResult = Functions::HotelBedActivityAuthentication('https://api.test.hotelbeds.com/activity-api/3.0/activities', $data);
 
         /** get a temparary data */
-//        $resp = file_get_contents(url('public/hotel_beds/activity/search_by_destination.json'));
+//        $resp = file_get_contents(url('hotel_beds/activity/search_by_destination.json'));
 //        $hotelBedResult = json_decode($resp);
         if (isset($hotelBedResult->activities) && sizeof($hotelBedResult->activities) > 0) {
             foreach ($hotelBedResult->activities as $obj) {

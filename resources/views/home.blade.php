@@ -32,7 +32,7 @@
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100 h-100" src="{{url('/public/slider_images/1.jpg')}}" alt="THIS IS ICELAND">
+                            <img class="d-block w-100 h-100" src="{{url('/slider_images/1.jpg')}}" alt="THIS IS ICELAND">
                             <div class="carousel-caption wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s">
                                 <h2 class="display-4">Beautiful puffins from Iceland</h2>
                                 <p>Your trip starts here... </p>
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100 h-100" src="{{url('public/slider_images/2.jpg')}}" alt="Latrabjarg">
+                            <img class="d-block w-100 h-100" src="{{url('slider_images/2.jpg')}}" alt="Latrabjarg">
                             <div class="carousel-caption wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s">
                                 <h2 class="display-4">Latrabjarg.  </h2>
                                 <p>One of Europes biggest bird cliffs Westfjord Iceland </p>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100 h-100" src="{{url('public/slider_images/3.jpg')}}" alt="Geothermal  Area">
+                            <img class="d-block w-100 h-100" src="{{url('slider_images/3.jpg')}}" alt="Geothermal  Area">
                             <div class="carousel-caption wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s">
                                 <h2 class="display-4"> Geothermal  Area </h2>
                                 <p>Krisuvik Reykjanes Iceland</p>
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="carousel-item">
-                            <img class="d-block w-100 h-100" src="{{url('public/slider_images/4.jpg')}}" alt="Northern Light">
+                            <img class="d-block w-100 h-100" src="{{url('slider_images/4.jpg')}}" alt="Northern Light">
                             <div class="carousel-caption wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s">
                                 <h2 class="display-4">Northern Light</h2>
                                 <p> Reykjavik Iceland</p>
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="carousel-item">
-                            <img class="d-block w-100 h-100" src="{{url('public/slider_images/5.jpg')}}" alt="Kirkjufell or Church Mountain Snaefellsnes Peninsula">
+                            <img class="d-block w-100 h-100" src="{{url('slider_images/5.jpg')}}" alt="Kirkjufell or Church Mountain Snaefellsnes Peninsula">
                             <div class="carousel-caption wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s">
                                 <h2 class="display-4">Kirkjufell or Church Mountain Snaefellsnes Peninsula</h2>
                                 <p>Your trip starts here... </p>
@@ -75,7 +75,7 @@
                         </div>
 
                         <div class="carousel-item">
-                            <img class="d-block w-100 h-100" src="{{url('public/slider_images/6.jpg')}}" alt="Sunset Reykjavik Iceland">
+                            <img class="d-block w-100 h-100" src="{{url('slider_images/6.jpg')}}" alt="Sunset Reykjavik Iceland">
                             <div class="carousel-caption wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s">
                                 <h2 class="display-4">Sunset Reykjavik Iceland</h2>
                                 <p>Your trip starts here... </p>
@@ -83,7 +83,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100 h-100" src="{{url('public/slider_images/7.jpg')}}" alt="Harpa Concert Hall">
+                            <img class="d-block w-100 h-100" src="{{url('slider_images/7.jpg')}}" alt="Harpa Concert Hall">
                             <div class="carousel-caption wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s">
                                 <h2 class="display-4">Harpa Concert Hall</h2>
                                 <p>Reykjavik Iceland </p>
@@ -153,9 +153,9 @@
                                     <span class="post_time">{{$values['duration']}}</span>
                                     <div class="d-flex justify-content-center img_wrapper">
                                         @if(isset($values->single_photo)&& !empty($values->single_photo))
-                                        <img src="{{ url('public/uploads/activities'.$values->single_photo->photo) }} " alt="{{ $values['activity_name'] }}">
+                                        <img src="{{ url('uploads/activities'.$values->single_photo->photo) }} " alt="{{ $values['activity_name'] }}">
                                         @else
-                                            <img src="{{ url('public/images/no-image.png') }} " alt="{{ $values['activity_name'] }}">
+                                            <img src="{{ url('images/no-image.png') }} " alt="{{ $values['activity_name'] }}">
                                         @endif
                                         <div class="d-flex justify-content-center align-items-center hover_txt">
                                             <p>{{ strip_tags( substr( $values['description'],0,100) ) }}
@@ -224,7 +224,7 @@
                             <div class="col-md-8 col-sm-6 col-xs-12">
                                 <a href="{{url('places/'.$SubCategoriesData[$i]['slug'])}}">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{ url('public/uploads/'.$SubCategoriesData[$i]['cat_image']) }}" alt="{{$SubCategoriesData[$i]['cat_name']}}">
+                                        <img src="{{ url('uploads/'.$SubCategoriesData[$i]['cat_image']) }}" alt="{{$SubCategoriesData[$i]['cat_name']}}">
                                         <div class="hover_txt">
                                             <h4>{{$SubCategoriesData[$i]['cat_name']}}</h4>
                                             <p>{{$SubCategoriesData[$i]['description']}}
@@ -239,7 +239,7 @@
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <a href="{{url('places/'.$SubCategoriesData[$i]['slug'])}}">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{ url('public/uploads/'.$SubCategoriesData[$i]['cat_image']) }}" alt="{{$SubCategoriesData[$i]['cat_name']}}">
+                                        <img src="{{ url('uploads/'.$SubCategoriesData[$i]['cat_image']) }}" alt="{{$SubCategoriesData[$i]['cat_name']}}">
                                         <div class="hover_txt">
                                             <h4>{{$SubCategoriesData[$i]['cat_name']}}</h4>
                                             <p>{{$SubCategoriesData[$i]['description']}}
@@ -254,7 +254,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <a href="{{url('places/'.$SubCategoriesData[$i]['slug'])}}">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{ url('public/uploads/'.$SubCategoriesData[$i]['cat_image']) }}" alt="{{$SubCategoriesData[$i]['cat_name']}}">
+                                        <img src="{{ url('uploads/'.$SubCategoriesData[$i]['cat_image']) }}" alt="{{$SubCategoriesData[$i]['cat_name']}}">
                                         <div class="hover_txt">
                                             <h4>{{$SubCategoriesData[$i]['cat_name']}}</h4>
                                             <p>{{$SubCategoriesData[$i]['description']}}
@@ -290,9 +290,9 @@
                                 <div class="card text-left">
                                     @if(isset($article->single_photo->photo))
                                     {{--{{dd($article->single_photo->photo) }}--}}
-                                    <img class="card-img-top" src="{{ url('public/uploads/'.$article->single_photo->photo) }}" alt="{{$article->title}}" style="height: 100%;">
+                                    <img class="card-img-top" src="{{ url('uploads/'.$article->single_photo->photo) }}" alt="{{$article->title}}" style="height: 100%;">
                                     @endif
-                                    {{--<img class="card-img-top" src="{{ asset('public/images/maxresdefault.jpg') }}" alt="Card image cap" style="height:60%;">--}}
+                                    {{--<img class="card-img-top" src="{{ asset('images/maxresdefault.jpg') }}" alt="Card image cap" style="height:60%;">--}}
                                         <div class="card-body">
                                         <h4 class="card-title">{{$article->title}}</h4>
                                         <p class="card-text">
@@ -305,7 +305,7 @@
                             @endforeach
                              {{--<div class="col-sm-12 col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">--}}
                                                             {{--<div class="card text-left">--}}
-                                                                {{--<img class="card-img-top" src="{{ url('public/images/img2.jpg')  }}" alt="Card image cap">--}}
+                                                                {{--<img class="card-img-top" src="{{ url('images/img2.jpg')  }}" alt="Card image cap">--}}
                                                                 {{--<div class="card-body">--}}
                                                                     {{--<h4 class="card-title">Top 10 Tours in Iceland | Both Popular & Unique</h4>--}}
                                                                     {{--<p class="card-text">Which are the most popular and best value activity and nature trips in Iceland? See this to find the best tours that you should join during your sta...</p>--}}
@@ -316,7 +316,7 @@
 
                             {{--<div class="col-sm-12 col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">--}}
                                 {{--<div class="card text-left">--}}
-                                    {{--<img class="card-img-top" src="{{ url('public/images/img2.jpg')  }}" alt="Card image cap">--}}
+                                    {{--<img class="card-img-top" src="{{ url('images/img2.jpg')  }}" alt="Card image cap">--}}
                                     {{--<div class="card-body">--}}
                                         {{--<h4 class="card-title">Top 10 Tours in Iceland | Both Popular & Unique</h4>--}}
                                         {{--<p class="card-text">Which are the most popular and best value activity and nature trips in Iceland? See this to find the best tours that you should join during your sta...</p>--}}
@@ -344,13 +344,13 @@
                             {{--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">--}}
                                 {{--<div class="carousel-inner">--}}
                                     {{--<div class="carousel-item active">--}}
-                                        {{--<img class="d-block w-100" src="{{url('public/images/img1.jpg')}}" alt="First slide">--}}
+                                        {{--<img class="d-block w-100" src="{{url('images/img1.jpg')}}" alt="First slide">--}}
                                     {{--</div>--}}
                                     {{--<div class="carousel-item">--}}
-                                        {{--<img class="d-block w-100" src="{{url('public/images/img2.jpg')}}" alt="Second slide">--}}
+                                        {{--<img class="d-block w-100" src="{{url('images/img2.jpg')}}" alt="Second slide">--}}
                                     {{--</div>--}}
                                     {{--<div class="carousel-item active">--}}
-                                        {{--<img class="d-block w-100" src="{{url('public/images/slide.jpg')}}" alt="Third slide">--}}
+                                        {{--<img class="d-block w-100" src="{{url('images/slide.jpg')}}" alt="Third slide">--}}
                                     {{--</div>--}}
                                     {{--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">--}}
                                         {{--<span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
@@ -374,7 +374,7 @@
 
                                     @if(isset($obj->photo) && !empty($obj->photo)  )
                                     <div class="carousel-item ">
-                                        <img class="gallery-100" src="{{url('public/uploads/'.$obj->photo)}}" alt="{{$obj->place_name}}">
+                                        <img class="gallery-100" src="{{url('uploads/'.$obj->photo)}}" alt="{{$obj->place_name}}">
                                     </div>
                                       @endif
                                 @endforeach

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', ' Address')
 @section('header_space')
-    <link href="{{ asset('public/admin/css/select2.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin_outer/css/select2.css') }}" rel="stylesheet" type="text/css" />
     <style type="text/css">
     .m-form.m-form--state.m-form--fit.m-form--label-align-right{
         padding-bottom: 10px;

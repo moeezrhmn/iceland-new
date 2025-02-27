@@ -49,22 +49,22 @@
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape1.jpg')}}" alt="First slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape1.jpg')}}" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape4.jpg')}}" alt="Second slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape4.jpg')}}" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape2.jpg')}}" alt="Third slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape2.jpg')}}" alt="Third slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape5.jpg')}}" alt="Second slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape5.jpg')}}" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape3.jpg')}}" alt="Third slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape3.jpg')}}" alt="Third slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape6.jpg')}}" alt="Second slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape6.jpg')}}" alt="Second slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -141,7 +141,7 @@
                                 <div class="slider_card">
                                     <a href="#">
                                         <div class="img_holder">
-                                            <img src="{{url('public/images/lancscape1.jpg')}}">
+                                            <img src="{{url('images/lancscape1.jpg')}}">
                                         </div>
                                         <div class="slider_content">
                                             <h3>Place Title</h3>
@@ -152,7 +152,7 @@
                                 <div class="slider_card">
                                     <a href="#">
                                         <div class="img_holder">
-                                            <img src="{{url('public/images/lancscape2.jpg')}}">
+                                            <img src="{{url('images/lancscape2.jpg')}}">
                                         </div>
                                         <div class="slider_content">
                                             <h3>Place Title</h3>
@@ -163,7 +163,7 @@
                                 <div class="slider_card">
                                     <a href="#">
                                         <div class="img_holder">
-                                            <img src="{{url('public/images/lancscape3.jpg')}}">
+                                            <img src="{{url('images/lancscape3.jpg')}}">
                                         </div>
                                         <div class="slider_content">
                                             <h3>Place Title</h3>
@@ -174,7 +174,7 @@
                                 <div class="slider_card">
                                     <a href="#">
                                         <div class="img_holder">
-                                            <img src="{{url('public/images/lancscape4.jpg')}}">
+                                            <img src="{{url('images/lancscape4.jpg')}}">
                                         </div>
                                         <div class="slider_content">
                                             <h3>Place Title</h3>
@@ -195,7 +195,7 @@
                             <div class="col-md-8 col-sm-6 col-xs-12">
                                 <a href="description.html">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/jpg.jpg')}}">
+                                        <img src="{{url('images/jpg.jpg')}}">
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places
@@ -209,7 +209,7 @@
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <a href="description.html">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/landscape24.jpg')}}">
+                                        <img src="{{url('images/landscape24.jpg')}}">
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places
@@ -223,7 +223,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <a href="#">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/jpg.jpg')}}">
+                                        <img src="{{url('images/jpg.jpg')}}">
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places
@@ -237,7 +237,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <a href="#">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/landscape24.jpg')}}">
+                                        <img src="{{url('images/landscape24.jpg')}}">
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places
@@ -251,7 +251,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <a href="#">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/img2.jpg')}}">
+                                        <img src="{{url('images/img2.jpg')}}">
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places
@@ -265,7 +265,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <a href="#">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/landscape24.jpg')}}">
+                                        <img src="{{url('images/landscape24.jpg')}}">
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places
@@ -279,7 +279,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <a href="#">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/img1.jpg')}}">
+                                        <img src="{{url('images/img1.jpg')}}">
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places
@@ -293,7 +293,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <a href="#">
                                     <div class="d-flex justify-content-center img_wrapper">
-                                        <img src="{{url('public/images/slide.jpg')}}">
+                                        <img src="{{url('images/slide.jpg')}}">
                                         <div class="hover_txt">
                                             <h4>Heading text</h4>
                                             <p>Jump aboard this incredible boat trip in one of the world’s most inspiring places

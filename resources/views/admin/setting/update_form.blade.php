@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Setting')
 @section('header_space')
-    <link href="{{ asset('public/admin/css/select2.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin_outer/css/select2.css') }}" rel="stylesheet" type="text/css" />
 <style type="text/css">
     .form-group.m-form__group.row{
         padding-bottom: 10px;

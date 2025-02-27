@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Edit Article')
 @section('header_space')
-    <link href="{{ asset('public/admin/css/select2.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin_outer/css/select2.css') }}" rel="stylesheet" type="text/css" />
 
     <style type="text/css">
     .form-group.m-form__group.row{
@@ -194,7 +194,7 @@ width: 145%;"  type="radio" name="main_image" class="MultiFile-title"
                                                    <?php echo ($photoobj->main == 1) ? 'checked' : ''; ?> value="{{$photoobj->photo_id}}">
                                         </div>
                                         <img alt="Place image" style="width:125px;height:125px;"
-                                             src="{{url('public/uploads/'.$photoobj->photo)}}"/>
+                                             src="{{url('uploads/'.$photoobj->photo)}}"/>
                                         <div>
                                         </div>
                                         <a style="color: red" href="javascript:void(0);" class=" MultiFile-remove image_remove"
@@ -236,7 +236,7 @@ width: 145%;"  type="radio" name="main_image" class="MultiFile-title"
 
    <script src="{{ asset('assets/pages/places/create.js') }}"></script>
 
-     <script type="{{ asset('public/admin/js/select2.js') }}"></script>
+     <script type="{{ asset('admin_outer/js/select2.js') }}"></script>
      <script type="text/javascript">
          $(document).ready(
              function () {

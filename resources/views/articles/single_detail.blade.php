@@ -25,7 +25,7 @@
                                 <div class="col-sm-12">
                                     <div class="card text-left">
 
-                                        <img class="card-img-top" src="{{ url('public/uploads/'.@$data->single_photo->photo) }}"
+                                        <img class="card-img-top" src="{{ url('uploads/'.@$data->single_photo->photo) }}"
 
                                              alt="Card image cap">
                                         @php //dd($data->single_photo->photo); @endphp
@@ -35,7 +35,7 @@
                                                 {{--<div class="rateit float-right" style="padding: 6px;"></div>--}}
                                                 <h4>{{@$data->$title}}</h4>
                                                 {{--<p>--}}
-                                                    {{--<img src="{{url('public/images/map-pink.png')}}">--}}
+                                                    {{--<img src="{{url('images/map-pink.png')}}">--}}
                                                     {{--<span>0.5 mi to Sydney center</span>--}}
                                                 {{--</p>--}}
                                                 <ul>

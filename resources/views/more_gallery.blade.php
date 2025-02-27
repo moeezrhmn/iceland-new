@@ -18,13 +18,13 @@
                                     @foreach($places as $obj)
                                         <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
                                             <a href="javascript:void(0);" class="photoCustomModal" title="{{$obj->place_name}}" description="{{$obj->description}}"
-                                               image="{{url('public/uploads/'.@$obj->photo)}}">
+                                               image="{{url('uploads/'.@$obj->photo)}}">
                                                 <div class="d-flex justify-content-center img_wrapper">
 
                                                     @if(!empty($obj->photo) && file_exists(public_path('uploads/'.$obj->photo)))
-                                                        <img src="{{url('public/uploads/'.@$obj->photo)}}" alt="{{@$obj->place_name}}">
+                                                        <img src="{{url('uploads/'.@$obj->photo)}}" alt="{{@$obj->place_name}}">
                                                     @else
-                                                        <img src="{{url('/public/images/no-image.png')}}" class="img-responsive" alt="image">
+                                                        <img src="{{url('/images/no-image.png')}}" class="img-responsive" alt="image">
                                                     @endif
                                                     <div class="hover_txt">
                                                         <h4>{{$obj->place_name}}</h4>
@@ -77,7 +77,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content" id="" style="padding: 24px;height: 590px;overflow-y: scroll;">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <img src="{{ url('public/images/plus.png') }}" alt="Plus btton"></button>
+                    <img src="{{ url('images/plus.png') }}" alt="Plus btton"></button>
                 <h3 id="title"> </h3>
                 <div class="main_wrapper">
                     <div class="form-group">

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Dashboard')
 @section('header_space')
-    <link href="{{ asset('public/css/calendar.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('css/calendar.css') }}" rel="stylesheet" type="text/css"/>
 @endsection
 @section('content')
     <div class="m-grid__item m-grid__item--fluid m-wrapper">

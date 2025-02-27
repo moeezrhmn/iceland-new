@@ -7,22 +7,22 @@
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape1.jpg')}}" alt="First slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape1.jpg')}}" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape4.jpg')}}" alt="Second slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape4.jpg')}}" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape2.jpg')}}" alt="Third slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape2.jpg')}}" alt="Third slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape5.jpg')}}" alt="Second slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape5.jpg')}}" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape3.jpg')}}" alt="Third slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape3.jpg')}}" alt="Third slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="{{url('public/images/lancscape6.jpg')}}" alt="Second slide">
+                        <img class="d-block w-100 h-100" src="{{url('images/lancscape6.jpg')}}" alt="Second slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

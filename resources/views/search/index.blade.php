@@ -114,11 +114,11 @@
                                         <a href="{{url('activities/detail/'.$values['slug'])}}" style="overflow: visible;">
                                             <span class="post_time">{{$values['duration']}}</span>
                                             <div class="d-flex justify-content-center img_wrapper">
-                                                {{--<img src="{{url('/public/images/0.jpg')}}" alt="">--}}
+                                                {{--<img src="{{url('/images/0.jpg')}}" alt="">--}}
                                                 @if(isset($values->single_photo)&& !empty($values->single_photo))
-                                                    <img src="{{ url('public/uploads/activities'.$values->single_photo->photo) }} ">
+                                                    <img src="{{ url('uploads/activities'.$values->single_photo->photo) }} ">
                                                 @else
-                                                    <img src="{{ url('public/images/no-image.png') }} ">
+                                                    <img src="{{ url('images/no-image.png') }} ">
                                                 @endif
                                                 <div class="d-flex justify-content-center align-items-center hover_txt">
                                                     <p>{{ strip_tags( substr( $values['description'],0,100) ) }}
@@ -195,11 +195,11 @@
                                         <div class="col-md-4 col-sm-6">
                                             <a href="{{url('restaurants/'.$obj->slug)}}">
                                                 <div class="d-flex justify-content-center img_wrapper">
-                                                    {{--<img src="{{url('public/images/landscape24.jpg')}}">--}}
+                                                    {{--<img src="{{url('images/landscape24.jpg')}}">--}}
                                                     @if(isset($values->single_photo)&& !empty($obj->cat_image))
-                                                        <img src="{{ url('public/uploads/'.$obj->cat_image) }} ">
+                                                        <img src="{{ url('uploads/'.$obj->cat_image) }} ">
                                                     @else
-                                                        <img src="{{ url('public/images/no-image.png') }} ">
+                                                        <img src="{{ url('images/no-image.png') }} ">
                                                     @endif
                                                     <div class="hover_txt">
                                                         <h4>{{@$obj->cat_name}}
@@ -231,12 +231,12 @@
                                         <div class="col-md-4 col-sm-6">
                                             <a href="{{url('places/'.$obj->slug)}}">
                                                 <div class="d-flex justify-content-center img_wrapper">
-                                                    {{--<img src="{{url('public/images/landscape24.jpg')}}">--}}
-                                                    {{--<img src="{{url('/public/images/0.jpg')}}" alt="">--}}
+                                                    {{--<img src="{{url('images/landscape24.jpg')}}">--}}
+                                                    {{--<img src="{{url('/images/0.jpg')}}" alt="">--}}
                                                     @if(isset($values->single_photo)&& !empty($obj->cat_image))
-                                                        <img src="{{ url('public/uploads/'.$obj->cat_image) }} ">
+                                                        <img src="{{ url('uploads/'.$obj->cat_image) }} ">
                                                     @else
-                                                        <img src="{{ url('public/images/no-image.png') }} ">
+                                                        <img src="{{ url('images/no-image.png') }} ">
                                                     @endif
                                                     <div class="hover_txt">
                                                         <h4>{{@$obj->cat_name}}

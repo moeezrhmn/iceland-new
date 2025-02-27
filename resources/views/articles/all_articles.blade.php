@@ -19,9 +19,9 @@
 								<div class="col-sm-6 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
 									<div class="card text-left">
 
-										{{--<img class="card-img-top article-img-top" src="{{ url('public/images/0.jpg') }}" alt="Card image cap" style="height:100%;">--}}
-										<img class="card-img-top article-img-top" src="{{ url('public/uploads/'.$article['single_photo']['photo']) }}" alt="Card image cap" style="height:100%;">
-										{{--<img class="card-img-top" src="{{ asset('public/images/maxresdefault.jpg') }}" alt="Card image cap" style="height:60%;">--}}
+										{{--<img class="card-img-top article-img-top" src="{{ url('images/0.jpg') }}" alt="Card image cap" style="height:100%;">--}}
+										<img class="card-img-top article-img-top" src="{{ url('uploads/'.$article['single_photo']['photo']) }}" alt="Card image cap" style="height:100%;">
+										{{--<img class="card-img-top" src="{{ asset('images/maxresdefault.jpg') }}" alt="Card image cap" style="height:60%;">--}}
 										<div class="card-body">
 											<div class="media-body">
 												<style>
@@ -43,7 +43,7 @@
 												</a></b></h2>
 
 												{{--<p>--}}
-													{{--<img  src="{{ url('public/uploads/'.$article['single_photo']['photo']) }}">--}}
+													{{--<img  src="{{ url('uploads/'.$article['single_photo']['photo']) }}">--}}
 													{{--<span>0.5 mi to Sydney center</span>--}}
 												{{--</p>--}}
 
