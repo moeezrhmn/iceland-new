@@ -78,7 +78,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        if (Input::has('id')) {
+        if ($request->has('id')) {
             return $this->update($request, 0);
         } else {
             return $this->index();
@@ -143,7 +143,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
 
-        $data = Input::all();
+        $data = $request->all();
         $additionalCheck = [];
         if (empty($id) || !empty($request->password)) {
             $additionalCheck['password'] = 'required|min:6';
@@ -152,10 +152,10 @@ class UserController extends Controller
         } else {
             $additionalCheck['email'] = 'unique:users,email,' . $id;
         }
-        $this->validate($request, array_merge([
+        $request->validate([
             'first_name' => 'required|max:150',
             'last_name' => 'required|max:150',
-        ], $additionalCheck));
+        ]);
 
         $object = (empty($id)) ? new User() : User::find($id);
         $object->email = $data['email'];

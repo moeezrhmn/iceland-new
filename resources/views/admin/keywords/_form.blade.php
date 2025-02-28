@@ -61,11 +61,14 @@ padding-bottom: 0px !important;
             <div class="m-portlet">
                 <!--begin::Form-->
                 @if(isset($item->id) && !empty($item->id))
-                    {!! Form::model($item, ['url'=> ['admin/keywords',$item->id],'method'=>'PUT','class' => 'm-form m-form--state m-form--fit m-form--label-align-right','id'=>'keyword-form']) !!}
+                    <form action="{{ route('keywords.update', $item->id) }}" method="POST" class="m-form m-form--state m-form--fit m-form--label-align-right" id="keyword-form">
+                    @method('PUT')
                 @else
-                    {!! Form::model($item, ['action' => 'Admin\KeywordsController@store','class' => 'm-form m-form--state m-form--fit m-form--label-align-right','id'=>'keyword-form']) !!}
+                    <form action="{{ route('keywords.store') }}" method="POST" class="m-form m-form--state m-form--fit m-form--label-align-right" id="keyword-form">
                 @endif
-                {!! Form::hidden('id') !!}
+                    @csrf
+                    <input type="hidden" name="id" value="{{ old('id', $item->id ?? '') }}">
+
 
                 <div class="m-portlet__body">
                     {{--error alert bar--}}
@@ -109,7 +112,7 @@ padding-bottom: 0px !important;
                             Keyword Name<span style="color: red"> *</span>
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
-                                {{ Form::text('keyword_name', NULL, array('class' => 'form-control m-input','placeholder' => 'Keyword Name')) }}
+                            <input type="text" name="keyword_name" class="form-control m-input" placeholder="Keyword Name" value="{{ old('keyword_name', $item->keyword_name ?? '') }}">
 
                             </div>
                             <span class="m-form__help">
@@ -146,7 +149,7 @@ padding-bottom: 0px !important;
                         </div>
                     </div>
                 </div>
-            {!! Form::close() !!}
+            </form>
             <!--end::Form-->
             </div>
             <!--end::Portlet-->

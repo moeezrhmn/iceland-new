@@ -71,7 +71,8 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        if (Input::has('id')) {
+  
+        if ($request->has('id')) {
             //echo 'id'; exit;
             return $this->update($request, 0);
         } else {
@@ -129,17 +130,18 @@ class PermissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Input::all();
+
+        $data = $request->all();
 
         $additionalCheck = [];
         if (!empty($id)) {
-               $this->validate($request, array_merge([
-            'name' => 'required',
-        ], $additionalCheck));
+            $request->validate([
+                'name' => 'required',
+            ]);
         }else{
-               $this->validate($request, array_merge([
-            'name' => 'required|unique:permissions,name',
-        ], $additionalCheck));
+            $request->validate([
+                'name' => 'required|unique:permissions,name',
+            ]);
         }
      
 

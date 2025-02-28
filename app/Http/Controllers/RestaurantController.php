@@ -89,66 +89,39 @@ class RestaurantController extends Controller
 
 
     public function index()
-
     {
-
         ///////////////////////get restaurant listing/////////////////////
-
         $sub_cat = Category::select(DB::raw('categories.slug,categories.id,parent_id,cat_name,cat_image,count(categories.id) as total'))->where('parent_id', 1)->
-
         join('multi_subcategories', 'multi_subcategories.subcategory_id', '=', 'categories.id')
-
             ->where('status', 'Active')
-
             ->groupby('categories.id')->orderBy('order_no','ASC')->get();
-
         $listing = Restaurants::select('stars', 'id', 'is_featured', 'category_id', 'description', 'slug', 'restaurant_name', 'status', 'created_at')->with([
-
             'single_photo' => function ($query) {
-
                 $query->select('photo_id', 'photo', 'instance_id');
-
                 $query->Where('category_id', '=', 1);
-
                 $query->Where('main', '=', 1);
-
             }])
-
             ->with([
-
                 'address' => function ($qury) {
-
                     $qury->select('address_id', 'email', 'address', 'city', 'country', 'instant_id');
-
                     $qury->Where('category_id', '=', 1);
-
                 }])
-
             ->with([
-
                 'reviews_avg' => function ($qury) {
-
                     $qury->Where('category_id', '=', 1);
-
                 }]);
-
-        if (Input::get('sort') == 'Name') {
-
+        if (request()->get('sort') == 'Name') {
             $listing->orderBy('restaurant_name', 'ASC');
-
-        } elseif (Input::get('sort') == 'Rating') {
-
+        } elseif (request()->get('sort') == 'Rating') {
             $listing->orderBy('stars', 'DESC');
-
         } else {
-
             $listing->orderBy('is_featured', 'DESC');
-
         }
 
         $listing->where('restaurants.status', 'Active');
 
         $listing = $listing->paginate(15);
+
 
         return view('restaurants/index', compact('listing', 'sub_cat'));
 

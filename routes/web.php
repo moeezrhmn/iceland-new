@@ -182,13 +182,13 @@ Route::prefix('admin')->group(function () {
     Route::resource('/places', PlacesController::class);
 
     //////////////////////// Activities ////////////////////////
-    Route::get('activities/remove_image', [PlacesController::class, 'remove_image']);
-    Route::get('activities/geocodes', [PlacesController::class, 'geo_codes']);
-    Route::get('activity/availability', [PlacesController::class, 'activity_availability']);
-    Route::get('activities/api', [PlacesController::class, 'api']);
-    Route::get('activities/api_old', [PlacesController::class, 'api_old']);
-    Route::get('activities-listing', [PlacesController::class, 'activities_listing'])->name('activities_listing');
-    Route::resource('/activities', PlacesController::class);
+    Route::get('activities/remove_image', [ActivityController::class, 'remove_image']);
+    Route::get('activities/geocodes', [ActivityController::class, 'geo_codes']);
+    Route::get('activity/availability', [ActivityController::class, 'activity_availability']);
+    Route::get('activities/api', [ActivityController::class, 'api']);
+    Route::get('activities/api_old', [ActivityController::class, 'api_old']);
+    Route::get('activities-listing', [ActivityController::class, 'activities_listing'])->name('activities_listing');
+    Route::resource('/activities', ActivityController::class);
 
     ////////////////////////////// Articles //////////////////////////////
     Route::get('articles/remove-image/{id}', [ArticlesController::class, 'remove_image']);

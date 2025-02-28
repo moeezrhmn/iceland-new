@@ -79,7 +79,7 @@ class KeywordsController extends Controller {
      */
     public function store(Request $request)
     {
-        if (Input::has('id')) {
+        if ($request->has('id')) {
             //echo 'id'; exit;
             return $this->update($request, 0);
         } else {
@@ -108,7 +108,7 @@ class KeywordsController extends Controller {
     public function edit($id)
     {
         $categories=Category::where('parent_id','=','0')->where('status','Active')->get();
-         $user = Keyword::find($id);
+        $user = Keyword::find($id);
         if (!empty($id)) {
         
              $keywordsCat=Category::find($user->category_id);
@@ -141,12 +141,12 @@ class KeywordsController extends Controller {
      */
     public function update(Request $request, $id)
     {
-        $data = Input::all();
+        $data = $request->all();
 
         $additionalCheck = [];
-        $this->validate($request, array_merge([
+        $request->validate([
             'keyword_name' => 'required',
-        ], $additionalCheck));
+        ]);
 
         $object = (empty($id)) ? new Keyword() : Keyword::find($id);
         $object->keyword_name = $data['keyword_name'];
