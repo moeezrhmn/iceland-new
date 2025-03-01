@@ -20,6 +20,7 @@
         "laravel/ui": "^4.6",
         "maatwebsite/excel": "^3.1",
         "php-coord/php-coord": "^5.10",
+        "spatie/laravel-permission": "^6.16",
         "torann/currency": "^1.1",
         "yajra/laravel-datatables-oracle": "^11.1"
     },
