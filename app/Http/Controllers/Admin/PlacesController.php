@@ -35,7 +35,7 @@ class PlacesController extends Controller
      */
    public function __construct()
     {
-              $this->middleware('auth');
+        $this->middleware('auth');
         $this->cat_detail = Category::select('id','cat_name')->where('id', '=', 1)->first();
         /// $this->act_cat_detail = Category::where('code', '=', 'ACT')->first();
        
@@ -154,13 +154,14 @@ class PlacesController extends Controller
                     $qury->select('address_id', 'email', 'address', 'city', 'country', 'instant_id');
                     $qury->Where('category_id', '=', $this->cat_detail->id);
                 }]);
-
-        if (Input::get('subcategory_id')) {
+        
+       
+        if (request()->get('subcategory_id')) {
             $items->whereHas(
                 'subCategories_edit', function ($query) {
                 $query->Where('category_id', '=', $this->cat_detail->id);
-                if (Input::get('subcategory_id')) {
-                    $query->Where("subcategory_id", "=", Input::get('subcategory_id'));
+                if (request()->get('subcategory_id')) {
+                    $query->Where("subcategory_id", "=", request()->get('subcategory_id'));
                 }
             });
         }
@@ -292,22 +293,20 @@ class PlacesController extends Controller
      */
     public function store(Request $request)
     {
-
-        $validator = Functions::validator($request->all(), [
+        $validator = $request->validate([
             'place_name' => 'required',
             'category_id' => 'required',
             'order_no' => 'required',
-//                    'description' => 'required',
-             // 'file' => 'required|image|mimes:jpeg,png,jpg,gif',
             'search_address' => 'required',
         ]);
-        if ($validator->fails()) {
-            return redirect('admin/places/create')->withErrors($validator)->withInput();
-        }
+
+        // if ($validator->fails()) {
+        //     return redirect('admin/places/create')->withErrors($validator)->withInput();
+        // }
 
         ///////////////////////creating place//////////////////////
         $category_act = Category::where('id', $request->category_id)->first();
-      $model_obj = new Places();
+        $model_obj = new Places();
         $formData = $request->all();
         $formData['slug'] = Functions::slug($request->slug, $request->place_name, $model_obj);
          $formData['created_by'] = Auth::id();

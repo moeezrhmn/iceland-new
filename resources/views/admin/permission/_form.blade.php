@@ -52,11 +52,15 @@
             <div class="m-portlet">
                 <!--begin::Form-->
                 @if(isset($item->id) && !empty($item->id))
-                    {!! Form::model($item, ['url'=> ['admin/permission',$item->id],'method'=>'PUT','class' => 'm-form m-form--state m-form--fit m-form--label-align-right form-wdth-50','id'=>'permission-form']) !!}
+                <form action="{{ route('permission.update', $item->id) }}" method="POST" class="m-form m-form--state m-form--fit m-form--label-align-right form-wdth-50" id="permission-form">
+                @csrf
+                @method('PUT')
+
                 @else
-                    {!! Form::model($item, ['action' => 'Admin\PermissionController@store','class' => 'm-form m-form--state m-form--fit m-form--label-align-right form-wdth-50','id'=>'permission-form']) !!}
+                <form action="{{ route('permission.store') }}" method="POST" class="m-form m-form--state m-form--fit m-form--label-align-right form-wdth-50" id="permission-form">
+                @csrf
                 @endif
-                {!! Form::hidden('id') !!}
+                <input type="hidden" name="id" value="{{ old('id', $item->id ?? '') }}">
 
                 <div class="m-portlet__body">
                     {{--error alert bar--}}
@@ -83,7 +87,7 @@
                             Name<span style="color: red"> *</span>
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
-                                {{ Form::text('name', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Name')) }}
+                            <input type="text" name="name" class="form-control m-input" placeholder="Enter Name" value="{{ old('name', $item->name ?? '') }}">
 
                             </div>
                             <span class="m-form__help">
@@ -104,7 +108,13 @@
                             <label class="">
                             Type <span style="color: red"> *</span>
                         </label>
-                            {{ Form::select('type', ['' => 'Select','user' => 'User','admin' => 'Admin','restaurant' => 'Restaurant'],null, ['class' => 'form-control m-input']) }}
+                        <select name="type" class="form-control m-input">
+                            <option value="">Select</option>
+                            <option value="user" {{ old('type', $item->type ?? '') == 'user' ? 'selected' : '' }}>User</option>
+                            <option value="admin" {{ old('type', $item->type ?? '') == 'admin' ? 'selected' : '' }}>Admin</option>
+                            <option value="restaurant" {{ old('type', $item->type ?? '') == 'restaurant' ? 'selected' : '' }}>Restaurant</option>
+                        </select>
+
                             <span class="m-form__help">
                                 </span>
                         </div>
@@ -126,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-            {!! Form::close() !!}
+            </form>
             <!--end::Form-->
             </div>
             <!--end::Portlet-->
