@@ -2,6 +2,7 @@
 
 use App\Facades\CustomHelper;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Str;
 
 if ( !function_exists( 'sitename' ) ) {
     function sitename()
@@ -526,6 +527,13 @@ if ( !function_exists( 'checkAppCity' ) ) {
         }
 
         return false;
+    }
+
+}
+if ( !function_exists( 'str_random' ) ) {
+    function str_random( $count = 60 )
+    {
+        return Str::random($count);
     }
 
 }

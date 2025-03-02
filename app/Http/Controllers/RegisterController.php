@@ -11,14 +11,13 @@ use Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\User;
-use Session;
 use DB;
 use App\Models\EmailTemplates;
 use App\Models\Setting;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-
-
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller {
 
@@ -124,7 +123,7 @@ if(!empty($user->email)){
             echo 'You already register please login';
         }else{
 
-            $req_data = array_except($request->all(), ['_token']);
+            $req_data = Arr::except($request->all(), ['_token']);
            // dd($req_data);
            /* $validator = $this->validator($req_data, [
                 //  'email' => 'required|email|max:255|unique:users,email,NULL,user_id,deleted_at,NULL',
@@ -170,7 +169,7 @@ if(!empty($user->email)){
     }
     public function news_letter_register(Request $request) {
         // print_r($request->all());exit;
-        $req_data = array_except($request->all(), ['_token']);
+        $req_data = Arr::except($request->all(), ['_token']);
         // dd($req_data);
         $validator = $this->validator($req_data, [
             'first_name' => 'required|max:255',
@@ -209,7 +208,7 @@ if(!empty($user->email)){
     }
     protected function register(Request $request) {
         // dd($request);
-        $req_data = array_except($request->all(), ['_token']);
+        $req_data = Arr::except($request->all(), ['_token']);
         // dd($req_data);
         $validator = $this->validator($req_data, [
           //  'email' => 'required|email|max:255|unique:users,email,NULL,user_id,deleted_at,NULL',
