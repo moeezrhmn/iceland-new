@@ -2,15 +2,17 @@
 
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Admin\AdLoginController;
+use App\Http\Controllers\Admin\ActivityController as AdminActivityController;
 use App\Http\Controllers\Admin\DealsController;
 use App\Http\Controllers\Admin\CategoriesController;
-use App\Http\Controllers\Admin\SubCategoriesController;
+use App\Http\Controllers\Admin\SubCategoriesController as AdminSubCategoriesController;
 use App\Http\Controllers\Admin\KeywordsController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\EmailTemplatesController;
+use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\DatatablesCustomController;
 
@@ -147,7 +149,6 @@ Route::get('getSearch', [ActivityController::class, 'getSearch']);
 // use App\Http\Controllers\Admin\RestaurantController;
 // use App\Http\Controllers\Admin\RoleController;
 // use App\Http\Controllers\Admin\SettingController;
-// use App\Http\Controllers\Admin\SubCategoriesController;
 // use App\Http\Controllers\Admin\SupplierController;
 // use App\Http\Controllers\Admin\UserController;
 // use Illuminate\Support\Facades\Route;
@@ -182,35 +183,35 @@ Route::prefix('admin')->group(function () {
     Route::resource('/places', PlacesController::class);
 
     //////////////////////// Activities ////////////////////////
-    Route::get('activities/remove_image', [ActivityController::class, 'remove_image']);
-    Route::get('activities/geocodes', [ActivityController::class, 'geo_codes']);
-    Route::get('activity/availability', [ActivityController::class, 'activity_availability']);
-    Route::get('activities/api', [ActivityController::class, 'api']);
-    Route::get('activities/api_old', [ActivityController::class, 'api_old']);
-    Route::get('activities-listing', [ActivityController::class, 'activities_listing'])->name('activities_listing');
-    Route::resource('/activities', ActivityController::class);
+    Route::get('activities/remove_image', [AdminActivityController::class, 'remove_image']);
+    Route::get('activities/geocodes', [AdminActivityController::class, 'geo_codes']);
+    Route::get('activity/availability', [AdminActivityController::class, 'activity_availability']);
+    Route::get('activities/api', [AdminActivityController::class, 'api']);
+    Route::get('activities/api_old', [AdminActivityController::class, 'api_old']);
+    Route::get('activities-listing', [AdminActivityController::class, 'activities_listing'])->name('activities_listing');
+    Route::resource('/activities', AdminActivityController::class);
 
     ////////////////////////////// Articles //////////////////////////////
-    Route::get('articles/remove-image/{id}', [ArticlesController::class, 'remove_image']);
-    Route::get('articles-listing', [ArticlesController::class, 'articles_listing'])->name('articles_listing');
-    Route::resource('/articles', ArticlesController::class);
+    Route::get('articles/remove-image/{id}', [AdminArticleController::class, 'remove_image']);
+    Route::get('articles-listing', [AdminArticleController::class, 'articles_listing'])->name('articles_listing');
+    Route::resource('/articles', AdminArticleController::class);
 
     ////////////// Restaurants ////////////////////////////
-    Route::get('restaurants/import-rcg-places', [RestaurantController::class, 'import_rcg_rst']);
-    Route::get('restaurants/import-idiscover-rst', [RestaurantController::class, 'import_idiscover_rst']);
-    Route::get('/restaurants/address_delete/{id}', [RestaurantController::class, 'address_delete']);
-    Route::get('/restaurants/address/{id}', [RestaurantController::class, 'address']);
-    Route::post('/restaurants/address_store/{id}', [RestaurantController::class, 'address_store']);
-    Route::get('/restaurants/remove_image/{id}', [RestaurantController::class, 'remove_image']);
-    Route::post('/restaurants/edit_address', [RestaurantController::class, 'edit_address']);
-    Route::get('/restaurant-listing', [RestaurantController::class, 'restaurant_listing']);
-    Route::resource('/restaurants', RestaurantController::class);
+    Route::get('restaurants/import-rcg-places', [AdminRestaurantController::class, 'import_rcg_rst']);
+    Route::get('restaurants/import-idiscover-rst', [AdminRestaurantController::class, 'import_idiscover_rst']);
+    Route::get('/restaurants/address_delete/{id}', [AdminRestaurantController::class, 'address_delete']);
+    Route::get('/restaurants/address/{id}', [AdminRestaurantController::class, 'address']);
+    Route::post('/restaurants/address_store/{id}', [AdminRestaurantController::class, 'address_store']);
+    Route::get('/restaurants/remove_image/{id}', [AdminRestaurantController::class, 'remove_image']);
+    Route::post('/restaurants/edit_address', [AdminRestaurantController::class, 'edit_address']);
+    Route::get('/restaurant-listing', [AdminRestaurantController::class, 'restaurant_listing']);
+    Route::resource('/restaurants', AdminRestaurantController::class);
 
     Route::get('categoriesListing', [CategoriesController::class, 'categoryListing'])->name('categoryListing');
     Route::resource('/categories', CategoriesController::class);
 
-    Route::get('subcategories/subcategoriesListing', [SubCategoriesController::class, 'subcategoriesListing'])->name('subcategoriesListing');
-    Route::resource('/subcategories', SubCategoriesController::class);
+    Route::get('subcategories/subcategoriesListing', [AdminSubCategoriesController::class, 'subcategoriesListing'])->name('subcategoriesListing');
+    Route::resource('/subcategories', AdminSubCategoriesController::class);
 
     ////////////// Keyword ///////////////
     Route::get('keyword-listing', [KeywordsController::class, 'keyword_listing'])->name('keyword-listing');

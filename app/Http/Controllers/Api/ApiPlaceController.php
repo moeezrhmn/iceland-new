@@ -6,7 +6,7 @@ use App\Custom\Helpers\CustomHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ApiplaceController extends Controller
+class ApiPlaceController extends Controller
 {
     public function places()
     {
