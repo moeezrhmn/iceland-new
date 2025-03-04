@@ -68,7 +68,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        if (Input::has('id')) {
+        if ($request->has('id')) {
             //echo 'id'; exit;
             return $this->update($request, 0);
         } else {
@@ -122,7 +122,7 @@ class RoleController extends Controller
             $args['item'] = $args['isNew'] ? [] : $user;
 
             //$args['groups'] = Role::all()->pluck('name', 'id')->toArray();
-            return view("admin.role._form", $args, compact('permissionTypes', 'roles_permissions', 'permissions'));
+            return view("admin.role._form", $args, compact('permissionTypes', 'roles_permissions'));
         }
     }
 
@@ -135,18 +135,17 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
-        $data = Input::all();
+        $data = $request->all();
         $additionalCheck = [];
-  if (!empty($id)) {
-              $this->validate($request, array_merge([
-            'name' => 'required',
-        ], $additionalCheck));
+        if (!empty($id)) {
+            return redirect()->back();
+            $request->validate([
+                'name' => 'required',
+            ]);
         }else{
-             $this->validate($request, array_merge([
-            'name' => 'required|unique:roles,name',
-        ], $additionalCheck));
+            $request->validate([
+                'name' => 'required|unique:roles,name',
+            ]);
         }
 
 
@@ -192,7 +191,8 @@ class RoleController extends Controller
         return DataTables::of($items)->addColumn('actions', function ($items) use ($currentRoute) {
 
             return '<span style="overflow: visible; width: 150px;">
-	                    <a href="' . getPageUrl("{$currentRoute}.edit", [$items->id]) . '" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit">
+	                    
+                         <a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit">
                             <i class="la la-edit"></i>
 	                    </a>
                         <a data-id="' . $items->id . '" href="javascript:void(0)"

@@ -665,15 +665,15 @@ class ActivityController extends Controller
                     $qury->Where('category_id', '=', $this->cat_detail->id);
                 }]);
 
-        if (Input::get('subcategory_id')) {
+        if (request()->get('subcategory_id')) {
             $items->whereHas(
                 'subCategories_edit', function ($query) {
                 $query->Where('category_id', '=', $this->cat_detail->id);
-                $query->Where("subcategory_id", "=", Input::get('subcategory_id'));
+                $query->Where("subcategory_id", "=", request()->get('subcategory_id'));
             } );
         }
-        if (Input::get('supplier_id')) {
-            $items->Where("supplier_id", "=", Input::get('supplier_id'));
+        if (request()->get('supplier_id')) {
+            $items->Where("supplier_id", "=", request()->get('supplier_id'));
         }
         $items = $items->get();
             /*   echo '<pre>';
@@ -1538,7 +1538,7 @@ class ActivityController extends Controller
     public function getSearch(Request $request)
     {   //dd('afsadfsd');
         
-        $value = Input::get('term');
+        $value = request()->get('term');
          // DB::enableQueryLog();
         $results = Places::join('addresses',function($join)
     {

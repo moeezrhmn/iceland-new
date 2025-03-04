@@ -112,12 +112,12 @@ class RestaurantController extends Controller
                     $querys->where('main', '=', 1);
                 }]);
 
-        if (Input::get('subcategory_id')) {
+        if (request()->get('subcategory_id')) {
             $items->whereHas(
                 'subCategories_edit', function ($query) {
                 $query->Where('category_id', '=', $this->cat_detail->id);
-                if (Input::get('subcategory_id')) {
-                    $query->Where("subcategory_id", "=", Input::get('subcategory_id'));
+                if (request()->get('subcategory_id')) {
+                    $query->Where("subcategory_id", "=", request()->get('subcategory_id'));
                 }
             });
         }
@@ -318,7 +318,7 @@ class RestaurantController extends Controller
             ->with('keywords')->first();
         $keywords = Keyword::where('category_id', $edit_place->category_id)->get();
         $subcategory = Category::where('parent_id', $edit_place->category_id)->get();
-        return view('admin/restaurants/form_edit', compact('subcategory', 'keywords', 'edit_place', 'categories'));
+        return view('admin/restaurants/form_edit', compact('subcategory', 'keywords', 'edit_place'));
     }
 
     public function update(Request $request, $id)
@@ -430,7 +430,7 @@ class RestaurantController extends Controller
             ->where('status','Active')->get();*/
         //$address_list = Address::where('instant_id', $id)->get();
         $address_list = Address::where('instant_id', $id)->where('category_id', $this->cat_detail->id)->get();
-        return view('admin/restaurants/add_restaurant_address', compact('restaurant_id', 'address_list', 'restaurants_name' , 'is_city'));
+        return view('admin/restaurants/add_restaurant_address', compact('restaurant_id', 'address_list', 'restaurants_name'));
     }
 
     public function edit_address(Request $request)
@@ -664,18 +664,18 @@ class RestaurantController extends Controller
             }
             );
         }
-        if (Input::get('subcat_id')) {
+        if (request()->get('subcat_id')) {
             $places->whereHas(
                 'subCategories', function ($query) {
                 $query->Where('category_id', '=', $this->cat_detail->id);
-                if (Input::get('subcat_id')) {
-                    $query->Where("subcategory_id", "=", Input::get('subcat_id'));
+                if (request()->get('subcat_id')) {
+                    $query->Where("subcategory_id", "=", request()->get('subcat_id'));
                 }
             }
             );
         }
-        if (Input::get('action_type')) {
-            $places->Where("restaurants.status", "=", Input::get('action_type'));
+        if (request()->get('action_type')) {
+            $places->Where("restaurants.status", "=", request()->get('action_type'));
         }
         $places = $places->get();
         dd($places);
@@ -775,18 +775,18 @@ class RestaurantController extends Controller
             }
             );
         }
-        if (Input::get('subcat_id')) {
+        if (request()->get('subcat_id')) {
             $places->whereHas(
                 'subCategories', function ($query) {
                 $query->Where('category_id', '=', $this->cat_detail->id);
-                if (Input::get('subcat_id')) {
-                    $query->Where("subcategory_id", "=", Input::get('subcat_id'));
+                if (request()->get('subcat_id')) {
+                    $query->Where("subcategory_id", "=", request()->get('subcat_id'));
                 }
             }
             );
         }
-        if (Input::get('action_type')) {
-            $places->Where("restaurants.status", "=", Input::get('action_type'));
+        if (request()->get('action_type')) {
+            $places->Where("restaurants.status", "=", request()->get('action_type'));
         }
         $places = $places->get();
 //        dd($places);

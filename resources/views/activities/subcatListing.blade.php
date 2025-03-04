@@ -23,6 +23,19 @@
         min-height: 360px;
 
     }
+    /* zeeshan css */
+    nav.top_web_sol svg.w-5.h-5 {
+        width: 18px;
+        margin-top: 20px;
+    }
+
+    nav.top_web_sol .flex.justify-between.flex-1.sm\:hidden {
+        display: none;
+    }
+    nav.top_web_sol p.text-sm.text-gray-700.leading-5.dark\:text-gray-400 {
+        display: none;
+    }
+    /* end */
 
     #unfavorite {
 
@@ -428,6 +441,8 @@
                             }
 
                         </style>
+
+                      
 
                         <div class="col custom_results float-left">
 
@@ -993,7 +1008,7 @@
 
                                 <div class="col-md-12 mt-4 float-left paginateDivMain b2">
 
-                                    <nav aria-label="page navigation example">
+                                    <nav class="top_web_sol" aria-label="page navigation example">
 
                                         {{ $places->links() }}
 

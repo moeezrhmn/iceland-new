@@ -184,27 +184,27 @@ dump($products->count());
              );
          }*/
 
-        if (Input::get('activtiy_term') && Input::get('type') == 'city' || Input::get('activity_type') == 'city') {
+        if (request()->get('activtiy_term') && request()->get('type') == 'city' || request()->get('activity_type') == 'city') {
             $restaurants->whereHas(
                 'address', function ($query) {
                 $query->where('category_id', '=', 3);
-                $query->Where('city', '=', trim(strtok(Input::get('activtiy_term'), ",")));
+                $query->Where('city', '=', trim(strtok(request()->get('activtiy_term'), ",")));
             }
             );
         }
 
 
-        if (Input::get('activtiy_term') && Input::get('type') == "activities" || Input::get('activity_type') == 'activities') {
-            // $restaurants->where('id', Input::get('city_id'));
-             $restaurants->Where('activities.activity_name', 'like', '%' . trim(Input::get('term')) . '%');
+        if (request()->get('activtiy_term') && request()->get('type') == "activities" || request()->get('activity_type') == 'activities') {
+            // $restaurants->where('id', request()->get('city_id'));
+             $restaurants->Where('activities.activity_name', 'like', '%' . trim(request()->get('term')) . '%');
         }
         ////////////////filter by sub cat
-        if (Input::get('cuisine')) {
+        if (request()->get('cuisine')) {
             $restaurants->whereHas(
                 'subCategories', function ($query) {
                 $query->where('category_id', '=', 3);
-                if (Input::get('cuisine')) {
-                    $query->Where("subcategory_id", "=", Input::get('cuisine'));
+                if (request()->get('cuisine')) {
+                    $query->Where("subcategory_id", "=", request()->get('cuisine'));
                 }
             }
             );
@@ -385,9 +385,9 @@ dump($products->count());
         }
         $listing->Where('places.status','Active');
 
-        if (Input::get('sort') == 'Name') {
+        if (request()->get('sort') == 'Name') {
             $listing->orderBy('place_name', 'ASC');
-        } elseif (Input::get('sort') == 'Rating') {
+        } elseif (request()->get('sort') == 'Rating') {
             $listing->orderBy('stars', 'DESC');
         } else {
             $listing->orderBy('price', 'DESC');
@@ -441,9 +441,9 @@ dump($products->count());
                 $query->where('user_id', Auth::user()->user_id);
             }]);
         }
-        if (Input::get('sort') == 'Name') {
+        if (request()->get('sort') == 'Name') {
             $listing->orderBy('place_name', 'ASC');
-        } elseif (Input::get('sort') == 'Rating') {
+        } elseif (request()->get('sort') == 'Rating') {
             $listing->orderBy('stars', 'DESC');
         } else {
             $listing->orderBy('is_featured', 'ASC');
@@ -969,19 +969,20 @@ dump($products->count());
 
     public function searchAct()
     {
-        $input=Input::get('activtiy_term');
+        $input=request()->get('activtiy_term');
         // $se=trim(Input::get('activtiy_term'), ",");
         // $imp=explode(",", $se);
         //$se=trim(Input::get('activtiy_term'), ",");
         
     
 
-        $date= explode("-",Input::get('daterange'))  ;
+        $date= explode("-",request()->get('daterange'))  ;
         $startDate[0]=explode(" ",@$date[0]);
         $endDate[1]=explode(" ",@$date[1]);
 
         $activtySubcategory= $subcat_place = Category::where('parent_id','3')->orderBy('order_no','ASC')->get();
         $sub_category = Category::where('parent_id','2')->orderBy('order_no','ASC')->get();
+    
         ///////////////////////////////////////////////////////////////////////////
         $restaurants = Activity::select( 'id', 'description', 'category_id','price', 'activity_name', 'slug')
             ->with(['single_photo' => function ($query) {
@@ -1031,8 +1032,8 @@ dump($products->count());
              );
          }*/
 
-        if (Input::get('activtiy_term') && Input::get('activity_type') == 'city') {
-            $se=trim(Input::get('activtiy_term'), ",");
+        if (request()->get('activtiy_term') && request()->get('activity_type') == 'city') {
+            $se=trim(request()->get('activtiy_term'), ",");
             $imp=explode(",", $se);
 
             $restaurants->whereHas(
@@ -1047,17 +1048,17 @@ dump($products->count());
         }
 
 
-        if (Input::get('activtiy_term') && Input::get('activity_type') == "activity") {
-            // $restaurants->where('id', Input::get('city_id'));
-            $restaurants->Where('activities.activity_name', 'like', '%' . trim(Input::get('activtiy_term')) . '%');
+        if (request()->get('activtiy_term') && request()->get('activity_type') == "activity") {
+            // $restaurants->where('id', request()->get('city_id'));
+            $restaurants->Where('activities.activity_name', 'like', '%' . trim(request()->get('activtiy_term')) . '%');
         }
         ////////////////filter by sub cat
-        if (Input::get('cuisine')) {
+        if (request()->get('cuisine')) {
             $restaurants->whereHas(
                 'subCategories', function ($query) {
                 $query->where('category_id', '=', 3);
-                if (Input::get('cuisine')) {
-                    $query->Where("subcategory_id", "=", Input::get('cuisine'));
+                if (request()->get('cuisine')) {
+                    $query->Where("subcategory_id", "=", request()->get('cuisine'));
                 }
             }
             );
@@ -1071,7 +1072,7 @@ dump($products->count());
         // DB::enableQueryLog();
         $restaurants = $restaurants->orderBy('order_no','ASC')->paginate(10);
         $places=$restaurants;
-//dd($restaurants);
+
 
 
         // print_r(DB::getQueryLog()); exit;
@@ -1128,7 +1129,7 @@ dump($products->count());
             //dd($place_list);
             $map_list = json_encode($map_data);
             $marker_list = json_encode($marker_data);
-  // dd($places);
+
             //  dd($_GET['ajax']);
             if (isset($_GET['ajax']) && $_GET['ajax'] == 1) {
                 echo view('search/searchIndex', compact('sub_cat', 'city_lat_lng','places', 'map_list', 'marker_list'))->with('restaurants', $restaurants);
@@ -1438,7 +1439,7 @@ dump($products->count());
 
     public function hsearch()
     {
-        $request = Input::get();
+        $request = request()->get();
         $sub_cat = Category::select(DB::raw('categories.slug,categories.id,parent_id,cat_name,cat_image,count(categories.id) as total'))
             ->where('parent_id', 2)->
             join('multi_subcategories', 'multi_subcategories.subcategory_id', '=', 'categories.id')->
@@ -1703,7 +1704,7 @@ dump($products->count());
         /** stor previous request data */
         Session::put('prev_request', $_GET);
         $country = Country::orderBy('name', 'ASC')->get();
-        $item = Places::findorfail(Input::get('activity_id'));
+        $item = Places::findorfail(request()->get('activity_id'));
         return view('activity/payment_info', compact('gateway', 'country', 'item'));
     }
 

@@ -58,11 +58,17 @@
             <div class="m-portlet">
                 <!--begin::Form-->
                 @if(isset($item->id) && !empty($item->id))
-                    {!! Form::model($item, ['url'=> ['admin/role',$item->id],'method'=>'PUT','class' => 'm-form m-form--state m-form--fit m-form--label-align-right form-wdth-50','id'=>'permission-form']) !!}
+                <form action="{{ url('admin/role', $item->id) }}" method="POST" class="m-form m-form--state m-form--fit m-form--label-align-right form-wdth-50" id="permission-form">
+                @csrf
+                @method('PUT')
+
                 @else
-                    {!! Form::model($item, ['action' => 'Admin\RoleController@store','class' => 'm-form m-form--state m-form--fit m-form--label-align-right form-wdth-50','id'=>'permission-form']) !!}
+                <form action="{{ action('App\Http\Controllers\Admin\RoleController@store') }}" method="POST" class="m-form m-form--state m-form--fit m-form--label-align-right form-wdth-50" id="permission-form">
+                @csrf
+
                 @endif
-                {!! Form::hidden('id') !!}
+                <input type="hidden" name="id" value="{{ old('id', $item->id ?? '') }}">
+
 
                 <div class="m-portlet__body">
                     {{--error alert bar--}}
@@ -89,7 +95,8 @@
                             Name<span style="color: red"> *</span>
                         </label>
                             <div class="input-group m-input-group m-input-group--square">
-                                {{ Form::text('name', NULL, array('class' => 'form-control m-input','placeholder' => 'Enter Name')) }}
+                                <input type="text" name="name" class="form-control m-input" placeholder="Enter Name" value="{{ old('name', $item->name ?? '') }}">
+
                             </div>
                             <span class="m-form__help">
                                     {{--We'll never share your email with anyone else.--}}
@@ -114,7 +121,9 @@
                                 <div class="m-checkbox-list">
                                     @foreach( $permissions as $permission)
                                         <label class="m-checkbox">
-                                            {{Form::checkbox('permissions[]',$permission['id'],(in_array($permission['id'], $roles_permissions)) ? true : false,['class' => $key])}}
+                                        <input type="checkbox" name="permissions[]" value="{{ $permission['id'] }}" class="{{ $key }}"
+                                        {{ in_array($permission['id'], $roles_permissions) ? 'checked' : '' }}>
+
                                             {{ $permission['name'] }}
                                             <span></span>
                                         </label>
@@ -140,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-            {!! Form::close() !!}
+            </form>
             <!--end::Form-->
             </div>
             <!--end::Portlet-->
